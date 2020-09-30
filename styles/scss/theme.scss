@@ -17,3 +17,112 @@ $grey:rgb(172, 172, 172);
 $lightGrey:rgb(235, 235, 235);
 $black:rgb(0,0,0);
 $white:rgb(255,255,255);
+
+.body {
+	padding: 0;
+	text-align: center;
+	font-family: 'nexa-light';
+}
+h1 {
+	font-size: 1.8rem;
+	line-height: 1.9rem;
+    font-family: 'nexa-bold';
+    margin:.3rem;
+    &.smaller{
+        font-size:1.6rem;
+        line-height:1.7rem;
+        @media (min-width:700px){
+            font-size:1.7rem;
+            line-height:1.8rem;
+        }
+        @media (min-width:1000px){
+            font-size:1.8rem;
+            line-height: 1.9rem;
+        }
+    }
+    @media (min-width:700px){
+        font-size:2.0rem;
+        line-height:2.1rem;
+    }
+    @media (min-width:1000px){
+        font-size:2.2rem;
+        line-height: 2.3rem;
+    }
+}
+h2 {
+	font-size: 1.6rem;
+	line-height: 1.7rem;
+    font-family: 'nexa-bold';
+    margin:.3rem;
+    &.smaller{
+        font-size:1.4rem;
+        line-height:1.5rem;
+        @media (min-width:700px){
+            font-size:1.5rem;
+            line-height:1.6rem;
+        }
+        @media (min-width:1000px){
+            font-size:1.6rem;
+            line-height: 1.7rem;
+        }
+    }
+    @media (min-width:700px){
+        font-size:1.8rem;
+        line-height:1.9rem;
+    }
+    @media (min-width:1000px){
+        font-size:2rem;
+        line-height: 2.1rem;
+    }
+}
+h3 {
+	font-size: 1.4rem;
+	line-height: 1.5rem;
+    font-family: 'nexa-bold';
+    margin:.3rem 0;
+    &.smaller{
+        font-size:1.2rem;
+        line-height:1.3rem;
+        @media (min-width:700px){
+            font-size:1.3rem;
+            line-height:1.4rem;
+        }
+        @media (min-width:1000px){
+            font-size:1.4rem;
+            line-height: 1.5rem;
+        }
+    }
+    @media (min-width:700px){
+        font-size:1.6rem;
+        line-height:1.7rem;
+    }
+    @media (min-width:1000px){
+        font-size:1.8rem;
+        line-height: 1.9rem;
+    }
+}
+p{
+	font-size: .9rem;
+	line-height: 1rem;
+    &.sm-smaller{
+        font-size:.8rem;
+        line-height:.9rem;
+    }
+    margin:.2rem 0;
+    @media (min-width:700px){
+        font-size:.95rem;
+        line-height:1.05rem;
+        &.md-smaller{
+            font-size:.87rem;
+            line-height:.97rem;
+        }
+    }
+    @media (min-width:1000px){
+        font-size:1.1rem;
+        line-height: 1.2rem;
+        &.lg-smaller{
+            font-size:1rem;
+            line-height: 1.1rem;
+        }
+    }
+}
