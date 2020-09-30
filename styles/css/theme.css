@@ -1,9 +1,6 @@
 @font-face {
   font-family: "nexa-light";
   src: url("../../assets/Nexa-Light.otf"); }
-@font-face {
-  font-family: "nexa-bold";
-  src: url("../../assets/Nexa-Bold.otf"); }
 .body {
   padding: 0;
   text-align: center;
