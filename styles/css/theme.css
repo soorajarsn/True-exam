@@ -8,31 +8,33 @@
   padding: 0;
   text-align: center;
   font-family: 'nexa-light'; }
+  @media (min-width: 1000px) {
+    .body {
+      text-align: left; } }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   line-height: 1.9rem;
   font-family: 'nexa-bold';
-  margin: .3rem; }
+  margin: .4rem 0;
+  letter-spacing: .03rem; }
   h1.smaller {
     font-size: 1.6rem;
-    line-height: 1.7rem; }
-    @media (min-width: 700px) {
-      h1.smaller {
-        font-size: 1.7rem;
-        line-height: 1.8rem; } }
-    @media (min-width: 1000px) {
-      h1.smaller {
-        font-size: 1.8rem;
-        line-height: 1.9rem; } }
+    line-height: 1.6rem; }
   @media (min-width: 700px) {
     h1 {
-      font-size: 2.0rem;
-      line-height: 2.1rem; } }
+      font-size: 2.1rem;
+      line-height: 2.1rem; }
+      h1.smaller {
+        font-size: 1.8rem;
+        line-height: 1.8rem; } }
   @media (min-width: 1000px) {
     h1 {
-      font-size: 2.2rem;
-      line-height: 2.3rem; } }
+      font-size: 2.3rem;
+      line-height: 2.3rem; }
+      h1.smaller {
+        font-size: 1.9rem;
+        line-height: 1.9rem; } }
 
 h2 {
   font-size: 1.6rem;
