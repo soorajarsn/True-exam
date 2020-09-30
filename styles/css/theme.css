@@ -15,9 +15,10 @@
 h1 {
   font-size: 1.9rem;
   line-height: 1.9rem;
-  font-family: 'nexa-bold';
+  font-family: 'Exo 2',sans-serif;
   margin: .4rem 0;
-  letter-spacing: .03rem; }
+  letter-spacing: .03rem;
+  font-weight: 600; }
   h1.smaller {
     font-size: 1.6rem;
     line-height: 1.6rem; }
@@ -37,74 +38,74 @@ h1 {
         line-height: 1.9rem; } }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   line-height: 1.7rem;
-  font-family: 'nexa-bold';
-  margin: .3rem; }
+  font-family: 'Exo 2',sans-serif;
+  font-weight: 600;
+  margin: .4rem 0; }
   h2.smaller {
     font-size: 1.4rem;
-    line-height: 1.5rem; }
-    @media (min-width: 700px) {
-      h2.smaller {
-        font-size: 1.5rem;
-        line-height: 1.6rem; } }
-    @media (min-width: 1000px) {
+    line-height: 1.4rem; }
+  @media (min-width: 700px) {
+    h2 {
+      font-size: 1.9rem;
+      line-height: 1.9rem; }
       h2.smaller {
         font-size: 1.6rem;
-        line-height: 1.7rem; } }
-  @media (min-width: 700px) {
-    h2 {
-      font-size: 1.8rem;
-      line-height: 1.9rem; } }
+        line-height: 1.6rem; } }
   @media (min-width: 1000px) {
     h2 {
-      font-size: 2rem;
-      line-height: 2.1rem; } }
+      font-size: 2.1rem;
+      line-height: 2.1rem; }
+      h2.smaller {
+        font-size: 1.8rem;
+        line-height: 1.8rem; } }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.5rem;
-  font-family: 'nexa-bold';
-  margin: .3rem 0; }
+  font-family: 'Exo 2',sans-serif;
+  font-weight: 600;
+  margin: .4rem 0; }
   h3.smaller {
     font-size: 1.2rem;
-    line-height: 1.3rem; }
-    @media (min-width: 700px) {
-      h3.smaller {
-        font-size: 1.3rem;
-        line-height: 1.4rem; } }
-    @media (min-width: 1000px) {
-      h3.smaller {
-        font-size: 1.4rem;
-        line-height: 1.5rem; } }
+    line-height: 1.2rem; }
   @media (min-width: 700px) {
     h3 {
-      font-size: 1.6rem;
-      line-height: 1.7rem; } }
+      font-size: 1.7rem;
+      line-height: 1.7rem; }
+      h3.smaller {
+        font-size: 1.4rem;
+        line-height: 1.4rem; } }
   @media (min-width: 1000px) {
     h3 {
-      font-size: 1.8rem;
-      line-height: 1.9rem; } }
+      font-size: 1.9rem;
+      line-height: 1.9rem; }
+      h3.smaller {
+        font-size: 1.6rem;
+        line-height: 1.6rem; } }
 
 p {
   font-size: .9rem;
   line-height: 1rem;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
   margin: .2rem 0; }
-  p.sm-smaller {
+  p.smaller {
     font-size: .8rem;
     line-height: .9rem; }
   @media (min-width: 700px) {
     p {
       font-size: .95rem;
       line-height: 1.05rem; }
-      p.md-smaller {
+      p.smaller {
         font-size: .87rem;
         line-height: .97rem; } }
   @media (min-width: 1000px) {
     p {
       font-size: 1.1rem;
       line-height: 1.2rem; }
-      p.lg-smaller {
+      p.smaller {
         font-size: 1rem;
         line-height: 1.1rem; } }
 
