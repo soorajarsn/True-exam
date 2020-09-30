@@ -1,0 +1,127 @@
+//colors;
+$darkBlue:rgb(42, 45, 62);
+$blue:rgb(1, 115, 178);
+$lightBlue:rgb(122, 176, 212);
+$opaqueBlue:rgba(122, 176, 212,.8);
+$darkGrey:rgb(114, 114, 114);
+$grey:rgb(172, 172, 172);
+$lightGrey:rgb(235, 235, 235);
+$black:rgb(0,0,0);
+$white:rgb(255,255,255);
+
+.body {
+	padding: 0;
+	text-align: center;
+    @media (min-width:1000px){
+        text-align: left;
+    }
+}
+h1 {
+	font-size: 1.9rem;
+	line-height: 1.9rem;
+    font-family: 'Exo 2',sans-serif;
+    margin:.4rem 0;
+    letter-spacing: .03rem;
+    font-weight: 600;
+    &.sm-smaller{
+        font-size:1.6rem;
+        line-height:1.6rem;
+    }
+    @media (min-width:700px){
+        font-size:2.1rem;
+        line-height:2.1rem;
+        &.md-smaller{
+            font-size:1.8rem;
+            line-height:1.8rem;
+        }
+    }
+    @media (min-width:1000px){
+        font-size:2.3rem;
+        line-height: 2.3rem;
+        &.lg-smaller{
+            font-size:1.9rem;
+            line-height: 1.9rem;
+        }
+    }
+}
+h2 {
+	font-size: 1.7rem;
+	line-height: 1.7rem;
+    font-family: 'Exo 2',sans-serif;
+    font-weight: 600;
+    margin:.4rem 0;
+    &.sm-smaller{
+        font-size:1.4rem;
+        line-height:1.4rem;
+    }
+    @media (min-width:700px){
+        font-size:1.9rem;
+        line-height:1.9rem;
+        &.md-smaller{
+            font-size:1.6rem;
+            line-height:1.6rem;
+        }
+    }
+    @media (min-width:1000px){
+        font-size:2.1rem;
+        line-height: 2.1rem;
+        &.lg-smaller{
+            font-size:1.8rem;
+            line-height: 1.8rem;
+        }
+    }
+}
+h3 {
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+    font-family: 'Exo 2',sans-serif;
+    font-weight: 600;
+    margin:.4rem 0;
+    &.sm-smaller{
+        font-size:1.2rem;
+        line-height:1.2rem;
+    }
+    @media (min-width:700px){
+        font-size:1.7rem;
+        line-height:1.7rem;
+        &.md-smaller{
+            font-size:1.4rem;
+            line-height:1.4rem;
+        }
+    }
+    @media (min-width:1000px){
+        font-size:1.9rem;
+        line-height: 1.9rem;
+        &.lg-smaller{
+            font-size:1.6rem;
+            line-height: 1.6rem;
+        }
+    }
+}
+p{
+	font-size: .9rem;
+    line-height: 1rem;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 400;
+    &.sm-smaller{
+        font-size:.8rem;
+        line-height:.9rem;
+    }
+    margin:.2rem 0;
+    @media (min-width:700px){
+        font-size:.95rem;
+        line-height:1.05rem;
+        &.md-smaller{
+            font-size:.87rem;
+            line-height:.97rem;
+        }
+    }
+    @media (min-width:1000px){
+        font-size:1.1rem;
+        line-height: 1.2rem;
+        &.lg-smaller{
+            font-size:1rem;
+            line-height: 1.1rem;
+        }
+    }
+}
