@@ -16,21 +16,21 @@ h1 {
   margin: .4rem 0;
   letter-spacing: .03rem;
   font-weight: 600; }
-  h1.smaller {
+  h1.sm-smaller {
     font-size: 1.6rem;
     line-height: 1.6rem; }
   @media (min-width: 700px) {
     h1 {
       font-size: 2.1rem;
       line-height: 2.1rem; }
-      h1.smaller {
+      h1.md-smaller {
         font-size: 1.8rem;
         line-height: 1.8rem; } }
   @media (min-width: 1000px) {
     h1 {
       font-size: 2.3rem;
       line-height: 2.3rem; }
-      h1.smaller {
+      h1.lg-smaller {
         font-size: 1.9rem;
         line-height: 1.9rem; } }
 
@@ -40,21 +40,21 @@ h2 {
   font-family: 'Exo 2',sans-serif;
   font-weight: 600;
   margin: .4rem 0; }
-  h2.smaller {
+  h2.sm-smaller {
     font-size: 1.4rem;
     line-height: 1.4rem; }
   @media (min-width: 700px) {
     h2 {
       font-size: 1.9rem;
       line-height: 1.9rem; }
-      h2.smaller {
+      h2.md-smaller {
         font-size: 1.6rem;
         line-height: 1.6rem; } }
   @media (min-width: 1000px) {
     h2 {
       font-size: 2.1rem;
       line-height: 2.1rem; }
-      h2.smaller {
+      h2.lg-smaller {
         font-size: 1.8rem;
         line-height: 1.8rem; } }
 
@@ -64,21 +64,21 @@ h3 {
   font-family: 'Exo 2',sans-serif;
   font-weight: 600;
   margin: .4rem 0; }
-  h3.smaller {
+  h3.sm-smaller {
     font-size: 1.2rem;
     line-height: 1.2rem; }
   @media (min-width: 700px) {
     h3 {
       font-size: 1.7rem;
       line-height: 1.7rem; }
-      h3.smaller {
+      h3.md-smaller {
         font-size: 1.4rem;
         line-height: 1.4rem; } }
   @media (min-width: 1000px) {
     h3 {
       font-size: 1.9rem;
       line-height: 1.9rem; }
-      h3.smaller {
+      h3.lg-smaller {
         font-size: 1.6rem;
         line-height: 1.6rem; } }
 
@@ -88,21 +88,21 @@ p {
   font-family: 'Exo 2', sans-serif;
   font-weight: 400;
   margin: .2rem 0; }
-  p.smaller {
+  p.sm-smaller {
     font-size: .8rem;
     line-height: .9rem; }
   @media (min-width: 700px) {
     p {
       font-size: .95rem;
       line-height: 1.05rem; }
-      p.smaller {
+      p.md-smaller {
         font-size: .87rem;
         line-height: .97rem; } }
   @media (min-width: 1000px) {
     p {
       font-size: 1.1rem;
       line-height: 1.2rem; }
-      p.smaller {
+      p.lg-smaller {
         font-size: 1rem;
         line-height: 1.1rem; } }
 
