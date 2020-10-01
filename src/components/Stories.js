@@ -11,7 +11,7 @@ function Stories() {
         </h2>
         <div className="stories lg-margin">
           <div className="story md-padding md-padding-left md-padding-right md-margin">
-            <p className="bold">"Wonderful experience with Tvastra Plus it helped me in saving a lot of amount as it provides free consulations with best doctos."</p>
+            <p className="bold">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
             <div className="img-name-container">
               <div className="img-container">
                 <img src={user1} alt="" />
@@ -24,8 +24,7 @@ function Stories() {
           </div>
           <div className="story md-padding md-padding-left md-padding-right md-margin">
             <p className="bold">
-              "Fantastic experience with health test using Tvastra Plus. Didn't pay anything for test. I came to knopw my deficiency in vitamin where family doctor feature helped
-              me with medicine."
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
             </p>
             <div className="img-name-container">
               <div className="img-container">
@@ -38,7 +37,7 @@ function Stories() {
             </div>
           </div>
           <div className="story md-padding md-padding-left md-padding-right md-margin">
-            <p className="bold">"24x7 access to doctos in just 60 seconds with 2 kids. One of them is bound to fall sick. Comes in super handy."</p>
+            <p className="bold">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."</p>
             <div className="img-name-container">
               <div className="img-container">
                 <img src={user4} alt="" />
