@@ -1,0 +1,61 @@
+$darkBlue:rgb(42, 45, 62);
+$blue:rgb(1, 115, 178);
+$lightBlue:rgb(122, 176, 212);
+$opaqueBlue:rgba(122, 176, 212, .8);
+$darkGrey:rgb(114, 114, 114);
+$grey:rgb(172, 172, 172);
+$lightGrey:rgb(235, 235, 235);
+$black:rgb(0, 0, 0);
+$white:rgb(255, 255, 255);
+
+.main-container {
+    width: calc(100% - 2rem);
+    padding: 0 1rem;
+    margin-top: 2rem;
+
+    @media (min-width:1000px) {
+        width: calc(100% - 4rem);
+        padding: 0 2rem;
+    }
+
+    @media (min-width:1300px) {
+        width: calc(100% - 8rem);
+        padding: 0 4rem;
+    }
+
+    .accordian-container {
+        .accordian {
+            background-color: $white;
+            cursor: pointer;
+            border:none;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+            .icon-and-content {
+                line-height: 1.5rem;
+                display: inline-block;
+                width: 95%;
+            }
+
+            .drop-down {
+                border: solid 2px $lightGrey;
+                font-size: .5rem;
+                border-radius: 100%;
+                width: 1.2rem;
+                height: 1.2rem;
+                text-align: center;
+                background-color: rgb(229, 241, 247);
+            }
+        }
+
+        .panel {
+            max-height: 0;
+            text-align: left;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background: rgb(229, 241, 247);
+            p{padding:.5rem;}
+        }
+    }
+}
