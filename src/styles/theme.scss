@@ -156,10 +156,29 @@ p {
 .bold{
     font-weight: 600;
 }
+.light-font{
+    font-weight: 200;
+}
 .larger-font {
     font-size: larger;
 }
-
+ul{
+    font-family: "Exo 2", sans-serif;
+    font-weight: 400;
+    li{
+        font-size:.9rem;
+        @media (min-width:700px){
+            font-size:1rem;
+        }
+        @media (min-width:1000px){
+            font-size:1.1rem;
+        }
+        margin:.6rem 0;
+        &.large-margin{
+            margin:1rem 0;
+        }
+    }
+}
 .button-container {
     overflow: hidden;
     font-size: 1rem;
