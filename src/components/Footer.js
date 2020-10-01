@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 // style={{margin:"0 10px;"}}style="margin:auto 5px;"
 function Footer() {
   return (
-    <div className="full-width flex">
+    <div className="footer-container-main full-width flex lg-margin-top">
       <footer className="limit-width">
-        <div class="footer-tablet">
-          <div class="article-container flex">
+        <div class="footer-tablet lg-margin">
+          <div class="article-container flex justify-space-between">
             <div>
               <Link to="">Courses</Link>
             </div>
@@ -23,11 +23,11 @@ function Footer() {
               <Link to="/">About</Link>
             </div>
           </div>
-          <div class="logo-container">Company Logo</div>
+          <div class="logo-container"><h2 className="sm-smaller md-smaller lg-smaller">Company Logo</h2></div>
         </div>
-        <div class="footer-tablet-end">
-          <p class="footer-end">All Rights Reserved &copy; trueExam 2018</p>
-          <div>
+        <div class="footer-tablet-end lg-margin">
+          <p class="footer-end sm-margin">All Rights Reserved &copy; trueExam 2018</p>
+          <div className="sm-margin">
             <i class="fab fa-facebook-square"></i>
             <i class="fab fa-pinterest"></i>
             <i class="fab fa-twitter"></i>
