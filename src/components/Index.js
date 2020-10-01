@@ -1,12 +1,14 @@
 import React from 'react';
 import Navbar from './Navbar';
 import "../styles/theme.scss";
-import indexHero from "./images/Index.jpg";
+import indexHero from "./images/Index.webp";
 function Index() {
     return (
         <React.Fragment>
             <Navbar />
-            <img src={indexHero} alt="" />
+            <div className="img-container">
+                <img src={indexHero} alt="" />
+            </div>
         </React.Fragment>
     )
 }
