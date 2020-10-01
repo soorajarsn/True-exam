@@ -4,8 +4,8 @@ function Ratings() {
   return (
     <div className="rating-section-container-main full-width flex">
       <div className="rating-section full-width limit-width">
-        <h2 className="lg-margin">Trusted by 10 Lakhs+ users every month</h2>
-        <p className="md-margin">TrueExam provides the best guidance to students. We began in 2009 and today we help more than 10 Lakhs learners every month.</p>
+        <h2 className="lg-margin">Trusted by 1 Lakhs+ users every month</h2>
+        <p className="md-margin">TrueExam provides the best guidance to students. We began in 2009 and today we help more than 1 Lakh learners every month.</p>
         <div className="lg-margin rating-container">
           <div className="rating flex flex-column color-secondary">
             <h3 className="sm-margin">4.5</h3>
@@ -54,23 +54,23 @@ function Ratings() {
         <div className="overview-container lg-margin">
           <div className="overview color-secondary flex flex-column bold">
             <i className="fas fa-users"></i>
-            <h4 className="sm-margin">2 Crore+</h4>
-            <span>Monthly Customers</span>
+            <h4 className="sm-margin">1 Lakhs+</h4>
+            <span>Students</span>
           </div>
           <div className="overview color-secondary flex flex-column bold">
-            <i className="fas fa-user-md"></i>
-            <h4 className="sm-margin">100,000+</h4>
-            <span>Verified Doctors</span>
-          </div>
-          <div className="overview color-secondary flex flex-column bold">
-            <i className="fas fa-pills"></i>
-            <h4 className="sm-margin">10 Lakh+</h4>
-            <span>Medicine </span>
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h4 className="sm-margin">100+</h4>
+            <span>Verified Instructors</span>
           </div>
           <div className="overview color-secondary flex flex-column bold">
             <i className="far fa-calendar"></i>
-            <h4 className="sm-margin">5 Crore+</h4>
-            <span>Doctor Appointments</span>
+            <h4 className="sm-margin">100+</h4>
+            <span>Assignments </span>
+          </div>
+          <div className="overview color-secondary flex flex-column bold">
+            <i class="fas fa-briefcase"></i>
+            <h4 className="sm-margin">90,000+</h4>
+            <span>Successfully started Career</span>
           </div>
         </div>
       </div>
