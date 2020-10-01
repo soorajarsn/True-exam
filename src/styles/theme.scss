@@ -11,7 +11,7 @@ $white:rgb(255,255,255);
 
 .body {
 	padding: 0;
-	text-align: center;
+    text-align: center;
     @media (min-width:1000px){
         text-align: left;
     }
@@ -191,17 +191,23 @@ p{
     }
 }
 a{
+    color:$black;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: "Exo 2",sans-serif;
 	&:hover{
         font-family: "Exo 2",sans-serif;
         font-weight: 600;
 	}
 }
 
-.hidden{
+.sm-hidden,.md-hidden,.lg-hidden{
     display:none;
 }
-.visible{
+.sm-visible,.md-visible,.lg-visible{
     display:block;
+    &.flex{display:flex;}
+    &.grid{display:grid;}
 }
 
 .flex{
