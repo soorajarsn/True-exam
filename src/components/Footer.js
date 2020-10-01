@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// style={{margin:"0 10px;"}}style="margin:auto 5px;"
 function Footer() {
   return (
     <div className="footer-container-main full-width flex lg-margin-top">
