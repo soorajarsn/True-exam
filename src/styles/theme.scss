@@ -2,353 +2,505 @@
 $darkBlue:rgb(42, 45, 62);
 $blue:rgb(1, 115, 178);
 $lightBlue:rgb(122, 176, 212);
-$opaqueBlue:rgba(122, 176, 212,.8);
+$opaqueBlue:rgba(122, 176, 212, .8);
 $darkGrey:rgb(114, 114, 114);
 $grey:rgb(172, 172, 172);
 $lightGrey:rgb(235, 235, 235);
-$black:rgb(0,0,0);
-$white:rgb(255,255,255);
+$black:rgb(0, 0, 0);
+$white:rgb(255, 255, 255);
 
 .body {
-	padding: 0;
+    padding: 0;
     text-align: center;
-    @media (min-width:1000px){
+
+    @media (min-width:1000px) {
         text-align: left;
     }
 }
+
 h1 {
-	font-size: 1.9rem;
-	line-height: 1.9rem;
-    font-family: 'Exo 2',sans-serif;
-    margin:.4rem 0;
+    font-size: 1.9rem;
+    line-height: 1.9rem;
+    font-family: 'Exo 2', sans-serif;
+    margin: .4rem 0;
     letter-spacing: .03rem;
     font-weight: 600;
-    &.sm-smaller{
-        font-size:1.6rem;
-        line-height:1.6rem;
+
+    &.sm-smaller {
+        font-size: 1.6rem;
+        line-height: 1.6rem;
     }
-    @media (min-width:700px){
-        font-size:2.1rem;
-        line-height:2.1rem;
-        &.md-smaller{
-            font-size:1.8rem;
-            line-height:1.8rem;
+
+    @media (min-width:700px) {
+        font-size: 2.1rem;
+        line-height: 2.1rem;
+
+        &.md-smaller {
+            font-size: 1.8rem;
+            line-height: 1.8rem;
         }
     }
-    @media (min-width:1000px){
-        font-size:2.3rem;
+
+    @media (min-width:1000px) {
+        font-size: 2.3rem;
         line-height: 2.3rem;
-        &.lg-smaller{
-            font-size:1.9rem;
+
+        &.lg-smaller {
+            font-size: 1.9rem;
             line-height: 1.9rem;
         }
     }
 }
+
 h2 {
-	font-size: 1.7rem;
-	line-height: 1.7rem;
-    font-family: 'Exo 2',sans-serif;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 600;
-    margin:.4rem 0;
-    &.sm-smaller{
-        font-size:1.4rem;
-        line-height:1.4rem;
+    margin: .4rem 0;
+
+    &.sm-smaller {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
     }
-    @media (min-width:700px){
-        font-size:1.9rem;
-        line-height:1.9rem;
-        &.md-smaller{
-            font-size:1.6rem;
-            line-height:1.6rem;
+
+    @media (min-width:700px) {
+        font-size: 1.9rem;
+        line-height: 1.9rem;
+
+        &.md-smaller {
+            font-size: 1.6rem;
+            line-height: 1.6rem;
         }
     }
-    @media (min-width:1000px){
-        font-size:2.1rem;
+
+    @media (min-width:1000px) {
+        font-size: 2.1rem;
         line-height: 2.1rem;
-        &.lg-smaller{
-            font-size:1.8rem;
+
+        &.lg-smaller {
+            font-size: 1.8rem;
             line-height: 1.8rem;
         }
     }
 }
+
 h3 {
-	font-size: 1.5rem;
-	line-height: 1.5rem;
-    font-family: 'Exo 2',sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-family: 'Exo 2', sans-serif;
     font-weight: 600;
-    margin:.4rem 0;
-    &.sm-smaller{
-        font-size:1.2rem;
-        line-height:1.2rem;
+    margin: .4rem 0;
+
+    &.sm-smaller {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
     }
-    @media (min-width:700px){
-        font-size:1.7rem;
-        line-height:1.7rem;
-        &.md-smaller{
-            font-size:1.4rem;
-            line-height:1.4rem;
+
+    @media (min-width:700px) {
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+
+        &.md-smaller {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
         }
     }
-    @media (min-width:1000px){
-        font-size:1.9rem;
+
+    @media (min-width:1000px) {
+        font-size: 1.9rem;
         line-height: 1.9rem;
-        &.lg-smaller{
-            font-size:1.6rem;
+
+        &.lg-smaller {
+            font-size: 1.6rem;
             line-height: 1.6rem;
         }
     }
 }
-p{
-	font-size: .9rem;
+
+p {
+    font-size: .9rem;
     line-height: 1rem;
     font-family: 'Exo 2', sans-serif;
     font-weight: 400;
-    &.sm-smaller{
-        font-size:.8rem;
-        line-height:.9rem;
+
+    &.sm-smaller {
+        font-size: .8rem;
+        line-height: .9rem;
     }
+
     margin:.2rem 0;
-    @media (min-width:700px){
-        font-size:.95rem;
-        line-height:1.05rem;
-        &.md-smaller{
-            font-size:.87rem;
-            line-height:.97rem;
+
+    @media (min-width:700px) {
+        font-size: .95rem;
+        line-height: 1.05rem;
+
+        &.md-smaller {
+            font-size: .87rem;
+            line-height: .97rem;
         }
     }
-    @media (min-width:1000px){
-        font-size:1.1rem;
+
+    @media (min-width:1000px) {
+        font-size: 1.1rem;
         line-height: 1.2rem;
-        &.lg-smaller{
-            font-size:1rem;
+
+        &.lg-smaller {
+            font-size: 1rem;
             line-height: 1.1rem;
         }
     }
 }
 
-.larger-font{
+.larger-font {
     font-size: larger;
 }
-.button-container{
-    overflow:hidden;
-    border:2px solid $darkBlue;
-    font-size:1rem;
+
+.button-container {
+    overflow: hidden;
+    border: 2px solid $darkBlue;
+    font-size: 1rem;
     font-family: "Exo 2", sans-serif;
     font-weight: 700;
     border-radius: .1rem;
-    @media (min-width:700px){
-        font-size:1.05rem;
+
+    @media (min-width:700px) {
+        font-size: 1.05rem;
     }
-    @media (min-width:1000px){
-        font-size:1.15rem;
+
+    @media (min-width:1000px) {
+        font-size: 1.15rem;
     }
-    button{
-        border:none;
-        cursor:pointer;
-        width:fit-content;
-        padding:.3rem .8rem;
+
+    button {
+        border: none;
+        cursor: pointer;
+        width: fit-content;
+        padding: .3rem .8rem;
     }
-    button.button-primary{
-        color:$white;
+
+    button.button-primary {
+        color: $white;
         background: $darkBlue;
         transform: scale(1.01);
         transition: transform .2s ease-in-out, background .2s ease-in-out;
-        &:hover{
-            background: rgba(42, 45, 62,.7);
+
+        &:hover {
+            background: rgba(42, 45, 62, .7);
         }
     }
-    button.button-secondary{
-        color:$darkBlue;
+
+    button.button-secondary {
+        color: $darkBlue;
         background: $white;
         transform: scale(1.01);
         transition: transform .2s ease-in-out, background .2s ease-in-out;
-        &:hover{
+
+        &:hover {
             background: $opaqueBlue;
         }
     }
-    button.full-width{
-        width:100%;
-        padding:.4rem 0;
+
+    button.full-width {
+        width: 100%;
+        padding: .4rem 0;
     }
-}
-.full-width{
-    width:100%;
-}
-.input-container{
-    width:100%;
-    overflow:hidden;
-    border:2px solid $grey;
-    input{
-        padding:.2rem .1rem .2rem .4rem;
-        border:none;
-        color:$darkGrey;
-        font-size:1rem;
-        @media (min-width:700px){
-            font-size:1.05rem;
-        }
-        @media (min-width:1000px){
-            font-size:1.15rem;
-        }
-        &::placeholder{
-            color:$grey;
-        }
-    }
-}
-a{
-    color:$black;
-    font-weight: 500;
-    text-decoration: none;
-    font-family: "Exo 2",sans-serif;
-	&:hover{
-        font-family: "Exo 2",sans-serif;
-        font-weight: 600;
-	}
-}
-.sm-hidden,.md-hidden,.lg-hidden{
-    display:none;
-}
-.sm-visible,.md-visible,.lg-visible{
-    display:block;
-    &.flex{display:flex;}
-    &.grid{display:grid;}
 }
 
-.flex{
-    display:flex;
+.full-width {
+    width: 100%;
+}
+
+.input-container {
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid $grey;
+
+    input {
+        padding: .2rem .1rem .2rem .4rem;
+        border: none;
+        color: $darkGrey;
+        font-size: 1rem;
+
+        @media (min-width:700px) {
+            font-size: 1.05rem;
+        }
+
+        @media (min-width:1000px) {
+            font-size: 1.15rem;
+        }
+
+        &::placeholder {
+            color: $grey;
+        }
+    }
+}
+
+a {
+    color: $black;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: "Exo 2", sans-serif;
+
+    &:hover {
+        font-family: "Exo 2", sans-serif;
+        font-weight: 600;
+    }
+}
+
+.flex {
+    display: flex;
     align-items: center;
     justify-content: center;
-    &.justify-space-between{
+
+    &.justify-space-between {
         justify-content: space-between;
     }
-    &.justify-start{
+
+    &.justify-start {
         justify-content: flex-start;
     }
 }
-.flex-column{
+
+.flex-column {
     flex-direction: column;
-    &.justify-space-between{
+
+    &.justify-space-between {
         align-items: space-between;
     }
-    &.justify-start{
+
+    &.justify-start {
         align-items: flex-start;
     }
 }
 
-.no-margin{
-    margin:0;
-}
-.sm-margin{
-    margin-top:.3rem;
-    margin-bottom:.3rem;
-}
-.md-margin{
-    margin-top:.6rem;
-    margin-bottom:.6rem;
-}
-.lg-margin{
-    margin-top:1rem;
-    margin-bottom:1rem;
-}
-.sm-margin-left{
-    margin-left:.3rem;
-}
-.md-margin-left{
-    margin-left:.6rem;
-}
-.lg-margin-left{
-    margin-left:1rem;
-}
-.sm-margin-right{
-    margin-right:.3rem;
-}
-.md-margin-right{
-    margin-right:.6rem;
-}
-.lg-margin-right{
-    margin-right:1rem;
-}
-.sm-margin-top{
-    margin-top:.3rem;
-}
-.md-margin-top{
-    margin-top:.6rem;
-}
-.lg-margin-top{
-    margin-top:1rem;
-}
-.no-padding{
-    padding:0;
-}
-.sm-padding{
-    padding-top:.3rem;
-    padding-bottom:.3rem;
-}
-.md-padding{
-    padding-top:.6rem;
-    padding-bottom:.6rem;
-}
-.lg-padding{
-    padding-top:1rem;
-    padding-bottom:1rem;
-}
-.sm-padding-left{
-    padding-left:.3rem;
-}
-.md-padding-left{
-    padding-left:.6rem;
-}
-.lg-padding-left{
-    padding-left:1rem;
-}
-.sm-padding-right{
-    padding-right:.3rem;
-}
-.md-padding-right{
-    padding-right:.6rem;
-}
-.lg-padding-right{
-    padding-right:1rem;
-}
-.sm-padding-top{
-    padding-top:.3rem;
-}
-.md-padding-top{
-    padding-top:.6rem;
-}
-.lg-padding-top{
-    padding-top:1rem;
-}
-.limit-width{
-    @media (min-width:1000px){
-        padding-left:2rem;
-        padding-right: 2rem;
-        &.full-width{
-            width:calc(100% - 4rem);
-        }
-    }
-    @media (min-width:1200px){
-        padding-left:3rem;
-        padding-right:3rem;
-        &.full-width{
-            width:calc(100% - 4rem);
-        }
-    }
-    @media (min-width:1800px){
-        max-width:1650px;
-    }
-}
-.container{
-    width:calc(100% - 2rem);
-    padding:1.2rem 1rem;
+.hidden {
+    display: none;
 }
 
-.nav-container{
+.sm-hidden {
+    @media (max-width:699px) {
+        display: none;
+    }
+}
+
+.md-hidden {
+    @media (min-width:700px) and (max-width:999px) {
+        display: none;
+    }
+}
+
+.lg-hidden {
+    @media (min-width:1000px) {
+        display: none;
+    }
+}
+
+.visible {
+    display: block;
+
+    &.flex {
+        display: flex;
+    }
+
+    &.grid {
+        display: grid;
+    }
+}
+
+.sm-visible {
+    @media (max-width:699px) {
+        display: block;
+
+        &.flex {
+            display: flex;
+        }
+
+        &.grid {
+            display: grid;
+        }
+    }
+}
+
+.md-visible {
+    @media (min-width:700px) and (max-width:999px) {
+        display: block;
+
+        &.flex {
+            display: flex;
+        }
+
+        &.grid {
+            display: grid;
+        }
+    }
+}
+
+.lg-visible {
+    @media (min-width:1000px) {
+        display: block;
+
+        &.flex {
+            display: flex;
+        }
+
+        &.grid {
+            display: grid;
+        }
+    }
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.sm-margin {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+}
+
+.md-margin {
+    margin-top: .6rem;
+    margin-bottom: .6rem;
+}
+
+.lg-margin {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sm-margin-left {
+    margin-left: .3rem;
+}
+
+.md-margin-left {
+    margin-left: .6rem;
+}
+
+.lg-margin-left {
+    margin-left: 1rem;
+}
+
+.sm-margin-right {
+    margin-right: .3rem;
+}
+
+.md-margin-right {
+    margin-right: .6rem;
+}
+
+.lg-margin-right {
+    margin-right: 1rem;
+}
+
+.sm-margin-top {
+    margin-top: .3rem;
+}
+
+.md-margin-top {
+    margin-top: .6rem;
+}
+
+.lg-margin-top {
+    margin-top: 1rem;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.sm-padding {
+    padding-top: .3rem;
+    padding-bottom: .3rem;
+}
+
+.md-padding {
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+
+.lg-padding {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.sm-padding-left {
+    padding-left: .3rem;
+}
+
+.md-padding-left {
+    padding-left: .6rem;
+}
+
+.lg-padding-left {
+    padding-left: 1rem;
+}
+
+.sm-padding-right {
+    padding-right: .3rem;
+}
+
+.md-padding-right {
+    padding-right: .6rem;
+}
+
+.lg-padding-right {
+    padding-right: 1rem;
+}
+
+.sm-padding-top {
+    padding-top: .3rem;
+}
+
+.md-padding-top {
+    padding-top: .6rem;
+}
+
+.lg-padding-top {
+    padding-top: 1rem;
+}
+
+.limit-width {
+    @media (min-width:1000px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        &.full-width {
+            width: calc(100% - 4rem);
+        }
+    }
+
+    @media (min-width:1200px) {
+        padding-left: 3rem;
+        padding-right: 3rem;
+
+        &.full-width {
+            width: calc(100% - 4rem);
+        }
+    }
+
+    @media (min-width:1800px) {
+        max-width: 1650px;
+    }
+}
+
+.container {
+    width: calc(100% - 2rem);
+    padding: 1.2rem 1rem;
+}
+
+.nav-container {
     box-shadow: 0 .09rem .3rem 0 $darkBlue;
     background: $opaqueBlue;
-    nav{
-        .nav-items-container{
-            @media (min-width:1000px){
-                width:30%;
+
+    nav {
+        .button-and-nav-links-container {
+            width: 50%;
+
+            .nav-items-container {
+                @media (min-width:1000px) {
+                    width: 60%;
+                }
             }
         }
     }
