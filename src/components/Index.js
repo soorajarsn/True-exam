@@ -6,6 +6,7 @@ import Pricing from "./Pricing";
 import Ratings from "./Ratings";
 import Stories from "./Stories";
 import Faqs from "./Faqs";
+import Footer from "./Footer";
 function Index() {
   return (
     <React.Fragment>
@@ -19,6 +20,7 @@ function Index() {
         <Ratings />
         <Stories />
         <Faqs />
+        <Footer />
       </div>
     </React.Fragment>
   );
