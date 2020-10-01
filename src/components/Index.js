@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import indexHero from "./images/Index.webp";
 import "../styles/index.scss";
 import Pricing from "./Pricing";
+import Ratings from "./Ratings";
 function Index() {
   return (
     <React.Fragment>
@@ -13,6 +14,7 @@ function Index() {
           <div className="gradient"></div>
         </div>
         <Pricing />
+        <Ratings />
       </div>
     </React.Fragment>
   );
