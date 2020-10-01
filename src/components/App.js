@@ -1,9 +1,13 @@
 import React from 'react';
 import "../styles/theme.scss";
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Index from './Index';
 function App() {
     return (
         <React.Fragment>
-            <h1>Hello TrueExam Coorporation</h1>
+            <Router>
+                <Route exact={true} path="/" render={props => <Index {...props} />}/>
+            </Router>
         </React.Fragment>
     )
 }
