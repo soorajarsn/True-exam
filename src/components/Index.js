@@ -4,6 +4,7 @@ import indexHero from "./images/Index.webp";
 import "../styles/index.scss";
 import Pricing from "./Pricing";
 import Ratings from "./Ratings";
+import Stories from "./Stories";
 function Index() {
   return (
     <React.Fragment>
@@ -15,6 +16,7 @@ function Index() {
         </div>
         <Pricing />
         <Ratings />
+        <Stories />
       </div>
     </React.Fragment>
   );
