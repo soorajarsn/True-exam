@@ -33,7 +33,7 @@ function Navbar() {
                       <button type="button" className="button-primary">Login</button>
                   </div>
                   <div className="button-container sm-margin-left">
-                      <button type="button">Register</button>
+                      <button type="button" className="button-secondary">Register</button>
                   </div>
               </div>
             </li>
