@@ -8,11 +8,13 @@ $grey:rgb(172, 172, 172);
 $lightGrey:rgb(235, 235, 235);
 $black:rgb(0, 0, 0);
 $white:rgb(255, 255, 255);
-
-.body {
+html{
+    width:100%;
+}
+body {
     padding: 0;
     text-align: center;
-
+    width:100%;
     @media (min-width:1000px) {
         text-align: left;
     }
@@ -151,18 +153,18 @@ p {
         }
     }
 }
-
+.bold{
+    font-weight: 600;
+}
 .larger-font {
     font-size: larger;
 }
 
 .button-container {
     overflow: hidden;
-    border: 2px solid $darkBlue;
     font-size: 1rem;
     font-family: "Exo 2", sans-serif;
-    font-weight: 700;
-    border-radius: .1rem;
+    border-radius: .2rem;
 
     @media (min-width:700px) {
         font-size: 1.05rem;
@@ -176,7 +178,9 @@ p {
         border: none;
         cursor: pointer;
         width: fit-content;
-        padding: .3rem .8rem;
+        padding: .35rem 1rem;
+        font-weight: 600;
+        border-radius: .4rem;
     }
 
     button.button-primary {
@@ -191,13 +195,12 @@ p {
     }
 
     button.button-secondary {
-        color: $darkBlue;
-        background: $white;
+        color: $white;
+        background: $blue;
         transform: scale(1.01);
         transition: transform .2s ease-in-out, background .2s ease-in-out;
-
         &:hover {
-            box-shadow: inset 0 -.1rem 1rem 0 $lightBlue;
+            background: rgba(1, 115, 178,.8);
         }
     }
 
@@ -247,7 +250,15 @@ a {
         font-weight: 600;
     }
 }
-
+.color-primary{
+    color:$darkBlue;
+}
+.color-secondary{
+    color:$blue;
+}
+.color-darkGrey{
+    color: $darkGrey;
+}
 .flex {
     display: flex;
     align-items: center;
@@ -264,14 +275,6 @@ a {
 
 .flex-column {
     flex-direction: column;
-
-    &.justify-space-between {
-        align-items: space-between;
-    }
-
-    &.justify-start {
-        align-items: flex-start;
-    }
 }
 
 .hidden {
@@ -494,6 +497,8 @@ a {
 .nav-container {
     box-shadow: 0 .09rem .3rem 0 $darkBlue;
     background: $opaqueBlue;
+    position: relative;
+    z-index: 1;
     nav {
         ul {
             width: 100%;
@@ -518,6 +523,7 @@ a {
                     position: absolute;
                     overflow-x: hidden;
                     height: calc(100vh - 4.7rem);
+                    z-index: 1;
                     @media (max-width:500px){
                         width:100%;
                     }
@@ -534,7 +540,7 @@ a {
                     .wrapper {
                         transform: translateX(100%);
                         transition: transform .2s ease-in-out;
-                        background: $opaqueBlue;
+                        background: rgb(148, 191, 220);
                         height: 100%;
                         display: flex;
                         flex-direction: column;
