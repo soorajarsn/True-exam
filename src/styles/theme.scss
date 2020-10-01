@@ -318,7 +318,38 @@ a{
 .lg-padding-top{
     padding-top:1rem;
 }
+.limit-width{
+    @media (min-width:1000px){
+        padding-left:2rem;
+        padding-right: 2rem;
+        &.full-width{
+            width:calc(100% - 4rem);
+        }
+    }
+    @media (min-width:1200px){
+        padding-left:3rem;
+        padding-right:3rem;
+        &.full-width{
+            width:calc(100% - 4rem);
+        }
+    }
+    @media (min-width:1800px){
+        max-width:1650px;
+    }
+}
 .container{
     width:calc(100% - 2rem);
     padding:1.2rem 1rem;
+}
+
+.nav-container{
+    box-shadow: 0 .09rem .3rem 0 $darkBlue;
+    background: $opaqueBlue;
+    nav{
+        .nav-items-container{
+            @media (min-width:1000px){
+                width:30%;
+            }
+        }
+    }
 }
