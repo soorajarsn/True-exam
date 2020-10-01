@@ -126,14 +126,16 @@ p{
     }
 }
 
+.larger-font{
+    font-size: larger;
+}
 .button-container{
-    width:100%;
     overflow:hidden;
     border:2px solid $darkBlue;
-    padding:.2rem .1rem .2rem .4rem;
     font-size:1rem;
     font-family: "Exo 2", sans-serif;
     font-weight: 700;
+    border-radius: .1rem;
     @media (min-width:700px){
         font-size:1.05rem;
     }
@@ -144,6 +146,7 @@ p{
         border:none;
         cursor:pointer;
         width:fit-content;
+        padding:.3rem .8rem;
     }
     button.button-primary{
         color:$white;
@@ -165,6 +168,7 @@ p{
     }
     button.full-width{
         width:100%;
+        padding:.4rem 0;
     }
 }
 .full-width{
@@ -200,7 +204,6 @@ a{
         font-weight: 600;
 	}
 }
-
 .sm-hidden,.md-hidden,.lg-hidden{
     display:none;
 }

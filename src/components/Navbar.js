@@ -11,8 +11,8 @@ function Navbar() {
             <li className="logo-container">
               <Link to="/"><h3 className="smaller">Company Logo</h3></Link>
             </li>
-            <li className="hidden nav-items-container">
-              <ul className="nav-items">
+            <li className="sm-hidden md-visible nav-items-container">
+              <ul className="nav-items flex larger-font">
                   <li className="sm-margin-left sm-margin-right">
                       <Link to="/">Lorem</Link>
                   </li>
@@ -29,10 +29,10 @@ function Navbar() {
             </li>
             <li className="flex">
                 <div className="button-container sm-margin-right">
-                    <button type="button">Login</button>
+                    <button type="button" className="button-primary">Login</button>
                 </div>
                 <div className="button-container sm-margin-left">
-                    <button type="button">Login</button>
+                    <button type="button">Register</button>
                 </div>
             </li>
           </ul>
