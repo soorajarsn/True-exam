@@ -5,6 +5,7 @@ import "../styles/index.scss";
 import Pricing from "./Pricing";
 import Ratings from "./Ratings";
 import Stories from "./Stories";
+import Faqs from "./Faqs";
 function Index() {
   return (
     <React.Fragment>
@@ -17,6 +18,7 @@ function Index() {
         <Pricing />
         <Ratings />
         <Stories />
+        <Faqs />
       </div>
     </React.Fragment>
   );
