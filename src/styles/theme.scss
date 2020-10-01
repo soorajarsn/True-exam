@@ -153,15 +153,6 @@ p {
         }
     }
 }
-.bold{
-    font-weight: 600;
-}
-.light-font{
-    font-weight: 200;
-}
-.larger-font {
-    font-size: larger;
-}
 ul{
     font-family: "Exo 2", sans-serif;
     font-weight: 400;
@@ -178,6 +169,15 @@ ul{
             margin:1rem 0;
         }
     }
+}
+.bold{
+    font-weight: 600;
+}
+.light-font{
+    font-weight: 200;
+}
+.larger-font {
+    font-size: larger;
 }
 .button-container {
     overflow: hidden;
