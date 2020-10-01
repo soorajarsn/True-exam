@@ -195,9 +195,8 @@ p {
         background: $white;
         transform: scale(1.01);
         transition: transform .2s ease-in-out, background .2s ease-in-out;
-
         &:hover {
-            background: $opaqueBlue;
+            box-shadow:inset 0 -.1rem 1rem 0 $lightBlue;
         }
     }
 
