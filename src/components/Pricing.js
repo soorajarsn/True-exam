@@ -16,9 +16,9 @@ function Pricing() {
                   <hr className="bottom-hr" />
                 </div>
                 <ul className="md-margin">
-                  <li className="sm-margin">Unlimited Consultation with any speciality</li>
-                  <li className="sm-margin">20% Off on prescription medicines</li>
-                  <li className="sm-margin">20% Off on tests & checkups</li>
+                  <li className="sm-margin large-margin">Unlimited Consultation with any speciality</li>
+                  <li className="sm-margin large-margin">20% Off on prescription medicines</li>
+                  <li className="sm-margin large-margin">20% Off on tests & checkups</li>
                 </ul>
               </div>
               <div className="price">
@@ -40,10 +40,10 @@ function Pricing() {
                   <hr className="bottom-hr" />
                 </div>
                 <ul className="md-margin">
-                  <li className="sm-margin">Unlimited Consultation with any speciality</li>
-                  <li className="sm-margin">20% Off on prescription medicines</li>
-                  <li className="sm-margin">20% Off on tests & checkups</li>
-                  <li className="sm-margin">10 Free in-Clinic consulations</li>
+                  <li className="sm-margin large-margin">Unlimited Consultation with any speciality</li>
+                  <li className="sm-margin large-margin">20% Off on prescription medicines</li>
+                  <li className="sm-margin large-margin">20% Off on tests & checkups</li>
+                  <li className="sm-margin large-margin">10 Free in-Clinic consulations</li>
                 </ul>
               </div>
               <div className="price">
@@ -64,11 +64,11 @@ function Pricing() {
                   <hr className="bottom-hr" />
                 </div>
                 <ul className="md-margin">
-                  <li className="sm-margin">Unlimited Consultation with any speciality</li>
-                  <li className="sm-margin">20% Off on prescription medicines</li>
-                  <li className="sm-margin">20% Off on tests & checkups</li>
-                  <li className="sm-margin">10 Free In-Clinic consultations</li>
-                  <li className="sm-margin">2 Master health checkups</li>
+                  <li className="sm-margin large-margin">Unlimited Consultation with any speciality</li>
+                  <li className="sm-margin large-margin">20% Off on prescription medicines</li>
+                  <li className="sm-margin large-margin">20% Off on tests & checkups</li>
+                  <li className="sm-margin large-margin">10 Free In-Clinic consultations</li>
+                  <li className="sm-margin large-margin">2 Master health checkups</li>
                 </ul>
               </div>
               <div className="price">
