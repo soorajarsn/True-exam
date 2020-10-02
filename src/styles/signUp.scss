@@ -9,9 +9,13 @@ $black:rgb(0, 0, 0);
 $white:rgb(255, 255, 255);
 .signup-container-main{
     background: $opaqueBlue;
+    min-height:100vh;
+    .nav-container{
+        position:fixed;
+        top:0;
+    }
 }
 .main-container{
-    background-image: $opaqueBlue;
     margin-top:3rem;
     @media (min-width:700px){
         margin-top:4rem;

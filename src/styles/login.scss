@@ -3,9 +3,15 @@ $lightGrey:rgb(235, 235, 235);
 $opaqueBlue:rgba(122, 176, 212, .8);
 .login-container-main{
     background: $opaqueBlue;
+    min-height:100vh;
+    .nav-container{
+        position:fixed;
+        top:0;
+    }
 }
 .login-container-main .main-container{
     height:68vh;
+    position:relative;top:6.3rem;
     @media (min-width:700px){
         height:75vh;
     }
