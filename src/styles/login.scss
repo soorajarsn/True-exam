@@ -15,6 +15,9 @@ $lightGrey:rgb(235, 235, 235);
     .form-container{
         display:block;
         text-align:center;
+        @media (max-width:999px){
+            margin-top:5rem;
+        }
         form{
             .field-set{
                 .input-container{
