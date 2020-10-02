@@ -4,8 +4,8 @@ function Footer() {
   return (
     <div className="footer-container-main full-width flex lg-margin-top">
       <footer className="limit-width">
-        <div class="footer-tablet lg-margin">
-          <div class="article-container flex justify-space-between">
+        <div className="footer-tablet lg-margin">
+          <div className="article-container flex justify-space-between">
             <div>
               <Link to="">Assignments</Link>
             </div>
@@ -22,16 +22,16 @@ function Footer() {
               <Link to="/">About</Link>
             </div>
           </div>
-          <div class="logo-container"><h2 className="sm-smaller md-smaller lg-smaller">Company Logo</h2></div>
+          <div className="logo-container"><h2 className="sm-smaller md-smaller lg-smaller">Company Logo</h2></div>
         </div>
-        <div class="footer-tablet-end lg-margin">
-          <p class="footer-end sm-margin">All Rights Reserved &copy; trueExam 2018</p>
+        <div className="footer-tablet-end lg-margin">
+          <p className="footer-end sm-margin">All Rights Reserved &copy; trueExam 2018</p>
           <div className="sm-margin">
-            <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-pinterest"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-google-plus-g"></i>
-            <i class="fab fa-instagram"></i>
+            <i className="fab fa-facebook-square"></i>
+            <i className="fab fa-pinterest"></i>
+            <i className="fab fa-twitter"></i>
+            <i className="fab fa-google-plus-g"></i>
+            <i className="fab fa-instagram"></i>
           </div>
         </div>
       </footer>
