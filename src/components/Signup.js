@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import Info from "./Info";
+import { AuthContext } from "../state/Store";
+import { signupUser } from "../state/auth/authActions";
 
 function Signup(props) {
   const [name, setName] = useState("");
@@ -16,6 +18,7 @@ function Signup(props) {
   const [country, setCountry] = useState("");
   const [instructor, setInstructor] = useState(false);
   const [error, setError] = useState("");
+  const auth = useContext(AuthContext);
   const updateValue = (setter, newValue) => {
     setter(newValue);
     if (error) setError("");
@@ -24,7 +27,7 @@ function Signup(props) {
     if (!name || !email || !password || !confirmPassword || !gender || !dob || !tel || !city || !state || !country) setError("Please Fill in all the fields");
     else if (password.length < 8) setError("Password too short: Atleast 8 chars");
     else if (password !== confirmPassword) setError("Passwords do not match");
-    console.log({ name, email, password, confirmPassword, gender, dob, tel, city, state, country, instructor });
+    signupUser(auth.dispatch,{ name, email, password, confirmPassword, gender, dob, tel, city, state, country, instructor });
     event.preventDefault();
   };
   const toggleEyeAndPassword = (pswd, name) => {
@@ -43,110 +46,116 @@ function Signup(props) {
     toggleEyeAndPassword("confirm-password-eye", "confirmPassword");
   };
   return (
-    <div className="signup-container-main full-width flex flex-column">
-      <Navbar hideSignup />
-      <div className="main-container flex flex-column full-width limit-width">
-        <div className="form-container lg-padding-left lg-padding-right lg-margin flex flex-column">
-          <h1 className="color-secondary lg-margin">Sign Up</h1>
-          <hr />
-          <form id="signup-form" className="md-padding-top" onSubmit={handleSubmit}>
-            <div className="field-set">
-              <div className="input-container md-margin">
-                <input type="text" name="name" placeholder="Enter Name" onChange={event => updateValue(setName, event.target.value)} autoComplete="off" />
-              </div>
-              <div className="input-container md-margin">
-                <input type="email" name="email" placeholder="Enter Email" onChange={event => updateValue(setEmail, event.target.value)} autoComplete="off" />
-              </div>
-              <div className="input-container md-margin">
-                <input type="password" name="password" placeholder="Enter Password" onChange={event => updateValue(setPassword, event.target.value)} autoComplete="off" />
-                <i className="far fa-eye-slash password-eye eye color-secondary" onClick={togglePassword}></i>
-                <i className="far fa-eye eye password-eye active color-secondary" onClick={togglePassword}></i>
-              </div>
-              <div className="input-container md-margin">
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  onChange={event => updateValue(setConfirmPassword, event.target.value)}
-                  autoComplete="off"
-                />
-                <i className="far fa-eye eye confirm-password-eye active color-secondary" onClick={toggleConfirmPassword}></i>
-                <i className="far fa-eye-slash eye confirm-password-eye color-secondary" onClick={toggleConfirmPassword}></i>
-              </div>
-              <div className="input-container select-container md-margin">
-                <select name="gender" onChange={event => updateValue(setGender, event.target.value)}>
-                  <option value="">Select Your Gender</option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                  <option value="others">Others</option>
-                </select>
-              </div>
-              <div className="input-container md-margin">
-                <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01" onChange={event => updateValue(setDob, event.target.value)} />
-              </div>
-              <div className="input-container md-margin">
-                <input
-                  type="tel"
-                  name="mobileNumber"
-                  pattern="[0-9]{10}||[0-9]{11}||[0-9]{12}"
-                  placeholder="Enter 10 digit Phone Number"
-                  onChange={event => updateValue(setTel, event.target.value)}
-                />
-              </div>
-              <div className="input-container city-state-input-container flex md-margin">
-                <input
-                  type="text"
-                  className="sm-margin-right"
-                  name="city"
-                  placeholder="Enter City"
-                  onChange={event => updateValue(setCity, event.target.value)}
-                  autoComplete="off"
-                />
-                <input
-                  type="text"
-                  className="sm-margin-left"
-                  name="state"
-                  placeholder="Enter State"
-                  onChange={event => updateValue(setState, event.target.value)}
-                  autoComplete="off"
-                />
-              </div>
-              <div className="input-container select-container md-margin">
-                <select name="country" id="countrySelect" onChange={event => updateValue(setCountry, event.target.value)}>
-                  <option value="">Select Your Country</option>
-                  <option value="india">India</option>
-                  <option value="canada">Canada</option>
-                  <option value="usa">USA</option>
-                  <option value="england">England</option>
-                  <option value="australia">Astralia</option>
-                  <option value="china">China</option>
-                  <option value="russia">Russia</option>
-                </select>
-              </div>
-              <div className="checkbox-input">
-                <input id="instructor" type="checkbox" name="instructor" onChange={event => setInstructor(!instructor)} />
-                <div className="checkbox">
-                  <i className="fas fa-check"></i>
+    <React.Fragment>
+      {auth.state.userLoggedIn ? (
+        <Redirect to="/assignments" />
+      ) : (
+        <div className="signup-container-main full-width flex flex-column">
+          <Navbar hideSignup />
+          <div className="main-container flex flex-column full-width limit-width">
+            <div className="form-container lg-padding-left lg-padding-right lg-margin flex flex-column">
+              <h1 className="color-secondary lg-margin">Sign Up</h1>
+              <hr />
+              <form id="signup-form" className="md-padding-top" onSubmit={handleSubmit}>
+                <div className="field-set">
+                  <div className="input-container md-margin">
+                    <input type="text" name="name" placeholder="Enter Name" onChange={event => updateValue(setName, event.target.value)} autoComplete="off" />
+                  </div>
+                  <div className="input-container md-margin">
+                    <input type="email" name="email" placeholder="Enter Email" onChange={event => updateValue(setEmail, event.target.value)} autoComplete="off" />
+                  </div>
+                  <div className="input-container md-margin">
+                    <input type="password" name="password" placeholder="Enter Password" onChange={event => updateValue(setPassword, event.target.value)} autoComplete="off" />
+                    <i className="far fa-eye-slash password-eye eye color-secondary" onClick={togglePassword}></i>
+                    <i className="far fa-eye eye password-eye active color-secondary" onClick={togglePassword}></i>
+                  </div>
+                  <div className="input-container md-margin">
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="Confirm Password"
+                      onChange={event => updateValue(setConfirmPassword, event.target.value)}
+                      autoComplete="off"
+                    />
+                    <i className="far fa-eye eye confirm-password-eye active color-secondary" onClick={toggleConfirmPassword}></i>
+                    <i className="far fa-eye-slash eye confirm-password-eye color-secondary" onClick={toggleConfirmPassword}></i>
+                  </div>
+                  <div className="input-container select-container md-margin">
+                    <select name="gender" onChange={event => updateValue(setGender, event.target.value)}>
+                      <option value="">Select Your Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="others">Others</option>
+                    </select>
+                  </div>
+                  <div className="input-container md-margin">
+                    <input type="date" name="dob" placeholder="dd/mm/yyyy" min="1940-01-01" max="2020-01-01" onChange={event => updateValue(setDob, event.target.value)} />
+                  </div>
+                  <div className="input-container md-margin">
+                    <input
+                      type="tel"
+                      name="mobileNumber"
+                      pattern="[0-9]{10}||[0-9]{11}||[0-9]{12}"
+                      placeholder="Enter 10 digit Phone Number"
+                      onChange={event => updateValue(setTel, event.target.value)}
+                    />
+                  </div>
+                  <div className="input-container city-state-input-container flex md-margin">
+                    <input
+                      type="text"
+                      className="sm-margin-right"
+                      name="city"
+                      placeholder="Enter City"
+                      onChange={event => updateValue(setCity, event.target.value)}
+                      autoComplete="off"
+                    />
+                    <input
+                      type="text"
+                      className="sm-margin-left"
+                      name="state"
+                      placeholder="Enter State"
+                      onChange={event => updateValue(setState, event.target.value)}
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div className="input-container select-container md-margin">
+                    <select name="country" id="countrySelect" onChange={event => updateValue(setCountry, event.target.value)}>
+                      <option value="">Select Your Country</option>
+                      <option value="india">India</option>
+                      <option value="canada">Canada</option>
+                      <option value="usa">USA</option>
+                      <option value="england">England</option>
+                      <option value="australia">Astralia</option>
+                      <option value="china">China</option>
+                      <option value="russia">Russia</option>
+                    </select>
+                  </div>
+                  <div className="checkbox-input">
+                    <input id="instructor" type="checkbox" name="instructor" onChange={event => setInstructor(!instructor)} />
+                    <div className="checkbox">
+                      <i className="fas fa-check"></i>
+                    </div>
+                  </div>
+                  <label htmlFor="instructor" className="lg-margin md-margin-left">
+                    Are you an Instructor?
+                  </label>
+                  <div className="button-container">
+                    <button type="submit" className="button-primary full-width">
+                      SIGN UP
+                    </button>
+                    <i className="fas fa-arrow-right"></i>
+                  </div>
                 </div>
-              </div>
-              <label htmlFor="instructor" className="lg-margin md-margin-left">
-                Are you an Instructor?
-              </label>
-              <div className="button-container">
-                <button type="submit" className="button-primary full-width">
-                  SIGN UP
-                </button>
-                <i className="fas fa-arrow-right"></i>
-              </div>
+              </form>
+              <p className="redirect lg-margin">
+                Already Registered?<Link to="/login">Login</Link>
+              </p>
             </div>
-          </form>
-          <p className="redirect lg-margin">
-            Already Registered?<Link to="/login">Login</Link>
-          </p>
+          </div>
+          {error && <Info className="error" header="Error" icon="fa-exclamation" info={error} />}
         </div>
-      </div>
-      {error && <Info className="error" header="Error" icon="fa-exclamation" info={error} />}
-    </div>
+      )}
+    </React.Fragment>
   );
 }
 
