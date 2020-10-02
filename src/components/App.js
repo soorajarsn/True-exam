@@ -8,7 +8,7 @@ function App() {
         <React.Fragment>
             <Router>
                 <Route exact={true} path="/" render={props => <Index {...props} />}/>
-                <Route exact={true} path="/login" render={props => <LoginWithEmail {...props} />} />
+                <Route exact={true} path="/login/:method?" render={props => <LoginWithEmail {...props} />} />
             </Router>
         </React.Fragment>
     )
