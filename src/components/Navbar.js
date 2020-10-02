@@ -38,15 +38,19 @@ function Navbar(props) {
                   </ul>
                 </div>
                 <div className="flex button-group">
-                  <div className={"button-container sm-margin-right"+ (props.hideLogin ? " hidden" : "")}>
-                    <button type="button" className="button-primary">
-                      Login
-                    </button>
+                  <div className={"button-container sm-margin-right" + (props.hideLogin ? " hidden" : "")}>
+                    <Link to="/login">
+                      <button type="button" className="button-primary">
+                        Login
+                      </button>
+                    </Link>
                   </div>
-                  <div className={"button-container sm-margin-left" + (props.hideSignup ? " hidden" : "button-container sm-margin-left") }>
-                    <button type="button" className="button-secondary">
-                      Register
-                    </button>
+                  <div className={"button-container sm-margin-left" + (props.hideSignup ? " hidden" : "button-container sm-margin-left")}>
+                    <Link to="signup">
+                      <button type="button" className="button-secondary">
+                        Register
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
