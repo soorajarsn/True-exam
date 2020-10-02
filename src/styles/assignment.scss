@@ -1,0 +1,85 @@
+$darkBlue:rgb(42, 45, 62);
+$blue:rgb(1, 115, 178);
+$lightBlue:rgb(122, 176, 212);
+$opaqueBlue:rgba(122, 176, 212, .8);
+$darkGrey:rgb(114, 114, 114);
+$grey:rgb(172, 172, 172);
+$lightGrey:rgb(235, 235, 235);
+$black:rgb(0, 0, 0);
+$white:rgb(255, 255, 255);
+.assignment-container-main{
+    .footer-container-main{
+        margin-top:0;
+    }
+}
+.assignment-container-instructor-main{
+    .hero{
+        position: relative;
+        .hero-img-container{
+            height:17rem;
+            overflow:hidden;
+            width:100%;
+            @media (min-width:1000px){
+                height:24rem;
+            }
+            img{
+                width:100%;
+                position:relative;
+                top:-6rem;
+                // height:3rem
+            }
+            @media (max-width:500px){
+                img{
+                    top:0;
+                height:100%;
+                width:unset;
+                }
+            }
+            @media (min-width:501px) and (max-width:600px){
+                img{height:100%;width:100%;top:0}
+            }
+        }
+        .overlay{
+            position:absolute;
+            height:100%;
+            width:100%;
+            background:rgba(42, 45, 62,.8);
+            top:0;
+        }
+        .content-container{
+            position: absolute;
+            top:5rem;
+            @media (max-width:699px){
+                justify-content: center;
+            }
+            .content{
+                @media (min-width:700px){
+                    align-items: flex-start;
+                }
+                color:$white;
+            }
+            @media (min-width:1000px){
+                top:9rem;
+            }
+        }
+    }
+    .assignment-create{
+        background:$opaqueBlue;
+        padding:3rem 0;
+        .create{
+            @media (min-width:700px){
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            button{
+                padding:.8rem 4rem;
+            }
+        }
+    }
+    .evaluation-container-main{
+        background:$lightGrey;
+        @media (min-width:700px){
+            text-align: left;
+        }
+    }
+}
