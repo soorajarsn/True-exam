@@ -3,13 +3,8 @@ import { LOGIN_REQUEST,
     LOGIN_ERROR, 
     SIGNUP_REQUEST, 
     SIGNUP_SUCCESS, 
-    SIGNUP_ERROR, 
-    RECOVER_ERROR, 
-    RECOVER_SUCCESS, 
-    RECOVER_REQUEST, 
-    LOGOUT_SUCCESS,
-    LOAD_USER_SUCCESS,
-    LOAD_USER_ERROR} from "./authConsts";
+    SIGNUP_ERROR,
+    LOGOUT_SUCCESS} from "./authConsts";
 
 const initialState = {
     token:localStorage.getItem('token'),
@@ -20,27 +15,23 @@ const initialState = {
     recoverMsg:'',
     loginError:'',
     signupError:'',
-    recoverError:''
+    recoverError:'',
+    isInstructor:localStorage.getItem('isInstructor')
 }
 
 const authReducer = (state = initialState, action) =>{
     switch(action.type){
-        case LOAD_USER_SUCCESS:
-            return {
-                ...state,
-                userLoggedIn:true,
-                ...action.payload
-            }
         case LOGIN_REQUEST:
         case SIGNUP_REQUEST:
-        case RECOVER_REQUEST:
             return {...state,userLoggingIn:true,loginError:'',signupError:'',recoverError:''};
         case LOGIN_SUCCESS:
         case SIGNUP_SUCCESS:
             localStorage.setItem('token',action.payload.token);
+            localStorage.setItem('isInstructor',action.payload.isInstructor);
             return {
                 ...state,
                 token:action.payload.token,
+                isInstructor:action.payload.isInstructor,
                 userLoggedIn:true,
                 userLoggingIn:false,
                 loginError:'',
@@ -49,6 +40,7 @@ const authReducer = (state = initialState, action) =>{
             }
         case LOGIN_ERROR:
             localStorage.removeItem('token');
+            localStorage.removeItem('isInstructor');
             return {
                 ...state,
                 token:null,
@@ -59,6 +51,7 @@ const authReducer = (state = initialState, action) =>{
             }
         case SIGNUP_ERROR:
             localStorage.removeItem('token');
+            localStorage.removeItem('isInstructor');
             return {
                 ...state,
                 token:null,
@@ -67,31 +60,9 @@ const authReducer = (state = initialState, action) =>{
                 recoverError: '',
                 signupError: action.payload
             }
-        case RECOVER_ERROR:
-            localStorage.removeItem('token');
-            return {
-                ...state,
-                token:null,
-                userLoggingIn:false,
-                loginError: '',
-                recoverError: action.payload,
-                signupError: ''
-            }
-        case RECOVER_SUCCESS:
-            localStorage.removeItem('token');
-            return {
-                ...state,
-                token:null,
-                userloggingIn:false,
-                loginError:'',
-                recoverError:'',
-                signupError:'',
-                recoverMsg:action.payload
-            }
         case LOGOUT_SUCCESS:
-        case LOAD_USER_ERROR:
             localStorage.removeItem('token');
-            console.log('logout success');
+            localStorage.removeItem('isInstructor');
             return {
                 ...state,
                 token:null,
