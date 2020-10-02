@@ -21,7 +21,8 @@ $opaqueBlue:rgba(122, 176, 212, .8);
     .form-container{
         display:block;
         text-align:center;
-        hr{width:calc(100% - .4rem)}
+        hr{width:calc(100% + 1.6rem);
+        position: relative;left:-1rem;}
         @media (max-width:999px){
             margin-top:5rem;
         }
@@ -54,7 +55,7 @@ $opaqueBlue:rgba(122, 176, 212, .8);
                 }
                 .button-container{
                     .fa-arrow-right{
-                        top:1.15rem;
+                        top:.9rem;
                     }
                 }
             }

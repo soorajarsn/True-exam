@@ -37,7 +37,7 @@ export function LoginWithEmail(props) {
     <div className="login-container-main full-width flex flex-column">
       <Navbar hideLogin />
       <div className="main-container flex flex-column full-width limit-width">
-        <div className="form-container lg-margin flex flex-column">
+        <div className="form-container lg-margin lg-padding-left lg-padding-right flex flex-column">
           <h1 className="color-secondary lg-margin">Login</h1>
           <hr />
 
@@ -54,7 +54,7 @@ export function LoginWithEmail(props) {
               </div>
 
               <div className="flex justify-space-between lg-margin md-padding-top">
-                <Link>
+                <Link to="">
                   <span id="try-another">Try Another Method?</span>
                 </Link>
                 <span id="forget-password">Forget Password?</span>
