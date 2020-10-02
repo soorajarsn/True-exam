@@ -12,7 +12,7 @@ function Faqs() {
             panel.style.maxHeight = panel.scrollHeight+40+"px";
     }
   return (
-    <div className="faq-container-main full-width flex">
+    <div id="faqs" className="faq-container-main full-width flex">
       <div className="main-container faqs full-width limit-width">
         <h2 className="sm-margin">Frequently Asked Questions</h2>
         <div className="accordian-container lg-margin-top">

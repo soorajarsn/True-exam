@@ -30,7 +30,7 @@ function Navbar(props) {
                       <Link to="/">Instructors</Link>
                     </li>
                     <li className="sm-margin-left sm-margin-right">
-                      <Link to="/">FAQs</Link>
+                      <Link to="#faqs">FAQs</Link>
                     </li>
                     <li className="sm-margin-left sm-margin-right">
                       <Link to="/">About</Link>
