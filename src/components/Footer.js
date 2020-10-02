@@ -13,7 +13,7 @@ function Footer() {
               <Link to="">Instructors</Link>
             </div>
             <div>
-              <Link to="/#faqs">FAQs</Link>
+              <a href="/#faqs">FAQs</a>
             </div>
             <div>
               <Link to="">Other Services</Link>
