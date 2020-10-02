@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Index from './Index';
 import { LoginWithEmail } from './Login';
 import Signup from './Signup';
+import Store from '../state/Store';
 function App() {
     return (
         <React.Fragment>
