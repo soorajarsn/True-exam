@@ -1,10 +1,10 @@
 $grey:rgb(172, 172, 172);
 $lightGrey:rgb(235, 235, 235);
-.green{
-    color:green;
-    box-shadow: -.3rem 0 0 0 green;
+$opaqueBlue:rgba(122, 176, 212, .8);
+.login-container-main{
+    background: $opaqueBlue;
 }
-.main-container{
+.login-container-main .main-container{
     height:68vh;
     @media (min-width:700px){
         height:75vh;
@@ -15,6 +15,7 @@ $lightGrey:rgb(235, 235, 235);
     .form-container{
         display:block;
         text-align:center;
+        hr{width:calc(100% - .4rem)}
         @media (max-width:999px){
             margin-top:5rem;
         }
