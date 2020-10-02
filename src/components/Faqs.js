@@ -13,7 +13,7 @@ function Faqs() {
     }
   return (
     <div className="faq-container-main full-width flex">
-      <div className="main-container full-width limit-width">
+      <div className="main-container faqs full-width limit-width">
         <h2 className="sm-margin">Frequently Asked Questions</h2>
         <div className="accordian-container lg-margin-top">
           <button className="accordian flex justify-space-between color-secondary sm-margin" onClick={toggleExpanded}>
