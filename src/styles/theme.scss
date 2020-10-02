@@ -555,6 +555,14 @@ a {
                             width: 50%;
                         }
                     }
+                    .button-group{
+                        .button-container{
+                            button{
+                                padding:.7rem 2.2rem;
+                                font-size:1.2rem;
+                            }
+                        }
+                    }
                 }
 
                 @media (max-width:999px) {

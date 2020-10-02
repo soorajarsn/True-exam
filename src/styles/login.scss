@@ -1,0 +1,53 @@
+$grey:rgb(172, 172, 172);
+$lightGrey:rgb(235, 235, 235);
+.green{
+    color:green;
+    box-shadow: -.3rem 0 0 0 green;
+}
+.main-container{
+    height:68vh;
+    @media (min-width:700px){
+        height:75vh;
+    }
+    @media (min-width:1000px){
+        height:60vh;
+    }
+    .form-container{
+        display:block;
+        text-align:center;
+        form{
+            .field-set{
+                .input-container{
+                    padding:.6rem 0;
+                    .fa-question-circle{
+                        position:absolute;
+                        right:1rem;
+                        top:1.27rem;
+                        color:$grey;
+                    }
+                    ::placeholder{
+                        font-size:1.1rem;
+                    }
+                    .eye{
+                        top:1.3rem!important;
+                    }
+                }
+                #try-another,#forget-password{
+                    display: inline-block;
+                    font-size:1rem;
+                    font-weight: 600;
+                    color:rgb(5, 111, 218);
+                    letter-spacing: .05rem;
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+                .button-container{
+                    .fa-arrow-right{
+                        top:1.15rem;
+                    }
+                }
+            }
+        }
+    }
+}
