@@ -9,7 +9,7 @@ $black:rgb(0, 0, 0);
 $white:rgb(255, 255, 255);
 .signup-container-main{
     background: $opaqueBlue;
-    min-height:100vh;
+    min-height:calc(100vh);
     .nav-container{
         position:fixed;
         top:0;
@@ -17,6 +17,7 @@ $white:rgb(255, 255, 255);
 }
 .main-container{
     margin-top:3rem;
+    position:relative;top:2.3rem;
     @media (min-width:700px){
         margin-top:4rem;
     }
