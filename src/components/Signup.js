@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Navbar from "./Navbar";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Info from "./Info";
 import { AuthContext } from "../state/Store";
 import { signupUser } from "../state/auth/authActions";
