@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar(props) {
+  console.log(props.hideLogin);
   function toggleNav(event) {
     const button = event.currentTarget;
     const id = button.getAttribute("data-target");
@@ -38,12 +39,12 @@ function Navbar() {
                   </ul>
                 </div>
                 <div className="flex button-group">
-                  <div className="button-container sm-margin-right">
+                  <div className={"button-container sm-margin-right"+ (props.hideLogin ? " hidden" : "")}>
                     <button type="button" className="button-primary">
                       Login
                     </button>
                   </div>
-                  <div className="button-container sm-margin-left">
+                  <div className={"button-container sm-margin-left" + (props.signUp ? " hidden" : "button-container sm-margin-left") }>
                     <button type="button" className="button-secondary">
                       Register
                     </button>
