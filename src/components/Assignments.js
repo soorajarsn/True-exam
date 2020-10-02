@@ -8,7 +8,7 @@ function Assignments(props) {
   const auth = useContext(AuthContext);
   return (
     <React.Fragment>
-      {auth.state.userLoggedIn ? (
+      {!auth.state.userLoggedIn ? (
         <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
       ) : (
         <div className="assigment-container-main">
