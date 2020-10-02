@@ -26,7 +26,7 @@ function Navbar(props) {
                 <div className="nav-items-container">
                   <ul className="nav-items flex larger-font full-width justify-space-between">
                     <li className="sm-margin-left sm-margin-right">
-                      <Link to="/">Assginments</Link>
+                      <Link to="/assignments">Assginments</Link>
                     </li>
                     <li className="sm-margin-left sm-margin-right">
                       <Link to="/">Instructors</Link>

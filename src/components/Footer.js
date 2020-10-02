@@ -7,19 +7,19 @@ function Footer() {
         <div className="footer-tablet lg-margin">
           <div className="article-container flex justify-space-between">
             <div>
-              <Link to="">Assignments</Link>
+              <Link to="/assignments">Assignments</Link>
             </div>
             <div>
               <Link to="">Instructors</Link>
             </div>
             <div>
-              <Link to="">FAQs</Link>
+              <Link to="/#faqs">FAQs</Link>
             </div>
             <div>
               <Link to="">Other Services</Link>
             </div>
             <div>
-              <Link to="/">About</Link>
+              <Link to="">About</Link>
             </div>
           </div>
           <div className="logo-container"><h2 className="sm-smaller md-smaller lg-smaller">Company Logo</h2></div>
