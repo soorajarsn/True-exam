@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../styles/login.scss";
 import "../styles/signUp.scss";
 export function LoginWithEmail(props) {
-  console.log("rendered");
+//   console.log("rendered");
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [error,setError] = useState("");
   return (
     <div className="login-container-main full-width flex flex-column">
       <Navbar hideLogin/>
@@ -16,11 +19,11 @@ export function LoginWithEmail(props) {
           <form id="login-form" className="flex flex-column md-padding md-padding-left md-padding-right">
             <div className="field-set">
               <div className="input-container login-with-email lg-margin-top md-margin">
-                <input type="email" name="email" placeholder="Enter Email Address" autoComplete="off" />
+                <input type="email" name="email" placeholder="Enter Email Address" value={email} onChange={(event)=>{setEmail(event.target.value)}} autoComplete="off" />
                 <i className="fas fa-question-circle"></i>
               </div>
               <div className="input-container login-with-email md-margin">
-                <input type="password" name="password" placeholder="Enter the password" autoComplete="off" />
+                <input type="password" name="password" placeholder="Enter the password" value={password} onChange={(event)=>{setPassword(event.target.value)}} autoComplete="off" />
                 <i className="far fa-eye-slash password-eye eye color-secondary"></i>
                 <i className="far fa-eye eye password-eye active color-secondary"></i>
               </div>
