@@ -5,33 +5,37 @@ import "../styles/login.scss";
 import "../styles/signUp.scss";
 import Info from "./Info";
 export function LoginWithEmail(props) {
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
-  const [error,setError] = useState("");
-  function handleEmailChange(event){
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  function handleEmailChange(event) {
     setEmail(event.target.value);
-    if(error)
-      setError("");
+    if (error) setError("");
   }
-  function  handlePasswordChange(event){
+  function handlePasswordChange(event) {
     setPassword(event.target.value);
-    if(error)
-      setError("");
+    if (error) setError("");
   }
-  function handleSubmit(event){
-    console.log('handling submit');
+  function handleSubmit(event) {
+    console.log("handling submit");
     event.preventDefault();
-    if(!email || !password)
-      setError("All Fields are required");
+    if (!email || !password) setError("All Fields are required");
     const emailpattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if(!emailpattern.test(email))
-      setError("Invalid Email");
-    if(password.length < 8)
-      setError("Password too short: Atleast 8 chars");
+    if (!emailpattern.test(email)) setError("Invalid Email");
+    if (password.length < 8) setError("Password too short: Atleast 8 chars");
+  }
+  function togglePassword() {
+    document.querySelector('.fa-eye').classList.toggle("active");
+    document.querySelector('.fa-eye-slash').classList.toggle("active");
+    if (document.querySelector(`input[name=password] ~ .fa-eye-slash`).classList.contains("active")) {
+      document.querySelector(`input[name=password]`).setAttribute("type", "text");
+    } else {
+      document.querySelector("input[name=password]").setAttribute("type", "password");
+    }
   }
   return (
     <div className="login-container-main full-width flex flex-column">
-      <Navbar hideLogin/>
+      <Navbar hideLogin />
       <div className="main-container flex flex-column full-width limit-width">
         <div className="form-container lg-margin flex flex-column">
           <h1 className="color-secondary lg-margin">Login</h1>
@@ -45,8 +49,8 @@ export function LoginWithEmail(props) {
               </div>
               <div className="input-container login-with-email md-margin">
                 <input type="password" name="password" placeholder="Enter the password" value={password} onChange={handlePasswordChange} autoComplete="off" />
-                <i className="far fa-eye-slash password-eye eye color-secondary"></i>
-                <i className="far fa-eye eye password-eye active color-secondary"></i>
+                <i className="far fa-eye-slash password-eye eye color-secondary" onClick={togglePassword}></i>
+                <i className="far fa-eye eye password-eye active color-secondary" onClick={togglePassword}></i>
               </div>
 
               <div className="flex justify-space-between lg-margin md-padding-top">
@@ -57,7 +61,9 @@ export function LoginWithEmail(props) {
               </div>
 
               <div className="button-container">
-                <button type="submit" className="button-primary full-width">Login</button>
+                <button type="submit" className="button-primary full-width">
+                  Login
+                </button>
                 <i className="fas fa-arrow-right"></i>
               </div>
             </div>
