@@ -58,7 +58,7 @@ function Ratings() {
             <span>Students</span>
           </div>
           <div className="overview color-secondary flex flex-column bold">
-            <i class="fas fa-chalkboard-teacher"></i>
+            <i className="fas fa-chalkboard-teacher"></i>
             <h4 className="sm-margin">100+</h4>
             <span>Verified Instructors</span>
           </div>
@@ -68,7 +68,7 @@ function Ratings() {
             <span>Assignments </span>
           </div>
           <div className="overview color-secondary flex flex-column bold">
-            <i class="fas fa-briefcase"></i>
+            <i className="fas fa-briefcase"></i>
             <h4 className="sm-margin">90,000+</h4>
             <span>Successfully started Career</span>
           </div>
