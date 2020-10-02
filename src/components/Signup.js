@@ -48,7 +48,7 @@ function Signup(props) {
   return (
     <React.Fragment>
       {auth.state.userLoggedIn ? (
-        <Redirect to="/assignments" />
+        <Redirect to={(props.location.state && props.location.state.from) || "/assignments"} />
       ) : (
         <div className="signup-container-main full-width flex flex-column">
           <Navbar hideSignup />
