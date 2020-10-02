@@ -20,7 +20,6 @@ export function LoginWithEmail(props) {
     if (error) setError("");
   }
   function handleSubmit(event) {
-    console.log("handling submit");
     event.preventDefault();
     const emailpattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (!email || !password) setError("All Fields are required");
