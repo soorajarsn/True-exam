@@ -21,4 +21,4 @@ function AppWithStore(){
     </Store>
   }
   
-export default App;
+export default AppWithStore;
