@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { AuthContext } from "../state/Store";
+import noImg from "./images/no-user-img.png";
 function Navbar(props) {
+  const auth = useContext(AuthContext);
   function toggleNav(event) {
     const button = event.currentTarget;
     const id = button.getAttribute("data-target");
@@ -37,22 +39,34 @@ function Navbar(props) {
                     </li>
                   </ul>
                 </div>
-                <div className="flex button-group">
-                  <div className={"button-container sm-margin-right" + (props.hideLogin ? " hidden" : "")}>
-                    <Link to="/login">
-                      <button type="button" className="button-primary">
-                        Login
-                      </button>
-                    </Link>
+
+                {auth.state.userLoggedIn ? (
+                  <div className="profile flex">
+                    <div className="profile-img">
+                      <img src={noImg} alt="" />
+                    </div>
+                    <div className="sm-margin-left">
+                      <span>User</span>
+                    </div>
                   </div>
-                  <div className={"button-container sm-margin-left" + (props.hideSignup ? " hidden" : "button-container sm-margin-left")}>
-                    <Link to="signup">
-                      <button type="button" className="button-secondary">
-                        Register
-                      </button>
-                    </Link>
+                ) : (
+                  <div className="flex button-group">
+                    <div className={"button-container sm-margin-right" + (props.hideLogin ? " hidden" : "")}>
+                      <Link to="/login">
+                        <button type="button" className="button-primary">
+                          Login
+                        </button>
+                      </Link>
+                    </div>
+                    <div className={"button-container sm-margin-left" + (props.hideSignup ? " hidden" : "button-container sm-margin-left")}>
+                      <Link to="signup">
+                        <button type="button" className="button-secondary">
+                          Register
+                        </button>
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </li>
             <li className="lg-hidden">
