@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import AssignmentViewInstructor from "./AssignmentViewInstructor";
 import "../styles/assignment.scss";
+import img1 from "./images/img1.jpg";
 function Assignments(props) {
   const auth = useContext(AuthContext);
   return (
@@ -14,6 +15,19 @@ function Assignments(props) {
       ) : (
         <div className="assignment-container-main">
           <Navbar />
+          <div className="hero full-width">
+            <div className="hero-img-container">
+              <img className=" sm-visible md-visible" src={img1} alt="" />
+              {/* <img className="hidden sm-visible" src={img2} alt="" /> */}
+            </div>
+            <div className="overlay"></div>
+            <div className="content-container container full-width flex">
+              <div className="content flex flex-column limit-width full-width">
+                <h1>Assignments</h1>
+                <span>Home/Assginments</span>
+              </div>
+            </div>
+          </div>
           <AssignmentViewInstructor />
           <Footer />
         </div>
