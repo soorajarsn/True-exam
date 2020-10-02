@@ -8,11 +8,6 @@ $lightGrey:rgb(235, 235, 235);
 $black:rgb(0, 0, 0);
 $white:rgb(255, 255, 255);
 .assignment-container-main{
-    .footer-container-main{
-        margin-top:0;
-    }
-}
-.assignment-container-instructor-main{
     .hero{
         position: relative;
         .hero-img-container{
@@ -63,6 +58,11 @@ $white:rgb(255, 255, 255);
             }
         }
     }
+    .footer-container-main{
+        margin-top:0;
+    }
+}
+.assignment-container-instructor-main{
     .assignment-create{
         background:$opaqueBlue;
         padding:3rem 0;
