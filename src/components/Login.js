@@ -3,27 +3,48 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../styles/login.scss";
 import "../styles/signUp.scss";
+import Info from "./Info";
 export function LoginWithEmail(props) {
-//   console.log("rendered");
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [error,setError] = useState("");
+  function handleEmailChange(event){
+    setEmail(event.target.value);
+    if(error)
+      setError("");
+  }
+  function  handlePasswordChange(event){
+    setPassword(event.target.value);
+    if(error)
+      setError("");
+  }
+  function handleSubmit(event){
+    console.log('handling submit');
+    event.preventDefault();
+    if(!email || !password)
+      setError("All Fields are required");
+    const emailpattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if(!emailpattern.test(email))
+      setError("Invalid Email");
+    if(password.length < 8)
+      setError("Password too short: Atleast 8 chars");
+  }
   return (
     <div className="login-container-main full-width flex flex-column">
       <Navbar hideLogin/>
       <div className="main-container flex flex-column full-width limit-width">
-        <div className="form-container flex flex-column">
+        <div className="form-container lg-margin flex flex-column">
           <h1 className="color-secondary lg-margin">Login</h1>
           <hr />
 
-          <form id="login-form" className="flex flex-column md-padding md-padding-left md-padding-right">
+          <form id="login-form" className="flex flex-column md-padding md-padding-left md-padding-right" onSubmit={handleSubmit}>
             <div className="field-set">
               <div className="input-container login-with-email lg-margin-top md-margin">
-                <input type="email" name="email" placeholder="Enter Email Address" value={email} onChange={(event)=>{setEmail(event.target.value)}} autoComplete="off" />
+                <input type="email" name="email" placeholder="Enter Email Address" value={email} onChange={handleEmailChange} autoComplete="off" />
                 <i className="fas fa-question-circle"></i>
               </div>
               <div className="input-container login-with-email md-margin">
-                <input type="password" name="password" placeholder="Enter the password" value={password} onChange={(event)=>{setPassword(event.target.value)}} autoComplete="off" />
+                <input type="password" name="password" placeholder="Enter the password" value={password} onChange={handlePasswordChange} autoComplete="off" />
                 <i className="far fa-eye-slash password-eye eye color-secondary"></i>
                 <i className="far fa-eye eye password-eye active color-secondary"></i>
               </div>
@@ -49,6 +70,7 @@ export function LoginWithEmail(props) {
       </div>
 
       <p className="copyright">All Rights Reserved. &copy; trueExam 2018</p>
+      {error && <Info className="error" icon="fa-exclamation" header="Error" info={error} />}
     </div>
   );
 }
