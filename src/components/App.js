@@ -15,5 +15,10 @@ function App() {
         </React.Fragment>
     )
 }
-
+function AppWithStore(){
+    return <Store>
+      <App />
+    </Store>
+  }
+  
 export default App;
