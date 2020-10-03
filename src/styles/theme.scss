@@ -548,16 +548,19 @@ a {
             .button-and-nav-links-container {
                 @media (min-width:1000px) {
                     width: 70%;
-
-                    .wrapper {
                         overflow: visible;
 
                         .nav-items-container {
                             position: relative;
                             top: .3rem;
                             width: 50%;
+                            @media (max-width:1800px){
+                                width:65%;
+                            }
+                            @media (min-width:1801px){
+                                width:55%;
+                            }
                         }
-                    }
 
                     .button-group {
                         .button-container {
@@ -599,7 +602,9 @@ a {
                     transform: translateX(100%);
                     transition: transform .2s ease-in-out;
                     background: white;
-
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     @media (max-width:500px) {
                         width: 100%;
                     }
@@ -620,13 +625,6 @@ a {
 
                     @media (min-width:801px) {
                         width: 40%;
-                    }
-
-                    .wrapper {
-                        height: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
                     }
 
                     &[aria-hidden="false"] {
@@ -684,7 +682,6 @@ a {
     margin-top:2.5rem;
 
     footer {
-        // font-family: "Exo 2",sans-serif;
         background: $darkBlue;
         font-size: 1.1rem;
         text-align: center;

@@ -34,8 +34,8 @@ function Navbar(props) {
                 <h3 className="smaller">Company Logo</h3>
               </Link>
             </li>
-            <li id="nav-hidden" className="button-and-nav-links-container" aria-hidden="true">
-              <div className="wrapper flex justify-space-between ">
+            <li id="nav-hidden" className="button-and-nav-links-container flex justify-space-between" aria-hidden="true">
+              {/* <div className="wrapper  "> */}
                 <div className="nav-items-container">
                   <ul className="nav-items flex larger-font full-width justify-space-between">
                     <li className="sm-margin-left sm-margin-right">
@@ -80,7 +80,7 @@ function Navbar(props) {
                     </div>
                   </div>
                 )}
-              </div>
+              {/* </div> */}
             </li>
             <li className="lg-hidden">
               <button type="button" data-target="nav-hidden" className="flex" onClick={toggleNav}>
