@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 function AssignmentCard(props) {
 
   function handleFileChange(event) {
@@ -31,7 +32,7 @@ function AssignmentCard(props) {
         <div className="flex flex-column button-group">
           <button type="button" className="img-container lg-padding lg-margin-top ">
             {props.instructorView ? (
-              "Go to Submissions"
+              <Link to={"/submissions/"+assignmentId}>Go to Submissions</Link>
             ) : (
               <a href={props.image} download>
                 Download Image Here
