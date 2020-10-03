@@ -32,7 +32,7 @@ function AssignmentCard(props) {
         <div className="flex flex-column button-group">
           <button type="button" className="img-container lg-padding lg-margin-top ">
             {props.instructorView ? (
-              <Link to={"/submissions/"+assignmentId}>Go to Submissions</Link>
+              <Link to={"/submissions/"+props.assignmentId}>Go to Submissions</Link>
             ) : (
               <a href={props.image} download>
                 Download Image Here
