@@ -9,7 +9,6 @@ import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
 function Assignments(props) {
   const auth = useContext(AuthContext);
-  console.log(auth);
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (
