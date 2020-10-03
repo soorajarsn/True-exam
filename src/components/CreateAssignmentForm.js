@@ -61,7 +61,7 @@ function CreateAssignmentForm(props) {
           </div>
           <div className="button-group flex lg-margin-top justify-space-between">
               <div className='button-container'>
-                  <button type="button" className="button-secondary full-width" onClick={()=>props.setShowCreateForm(false)}>Cancel</button>
+                  <button type="button" className="button-secondary full-width" onClick={()=>props.setshowCreateForm(false)}>Cancel</button>
               </div>
               <div className="button-container">
                   <button className="button-primary full-width" type="submit">Create</button>
