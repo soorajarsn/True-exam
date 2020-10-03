@@ -47,7 +47,7 @@ function AssignmentViewInstructor() {
   const [localAssignments, setLocalAssignments] = useState([]);
   useEffect(() => {
     const l = getLocalAssignments();
-    setLocalAssignments(l);
+    if(l) setLocalAssignments(l);
   }, []);
   return (
     <div className="assignment-container-instructor-main full-width flex flex-column">
