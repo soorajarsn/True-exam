@@ -7,79 +7,258 @@ $grey:rgb(172, 172, 172);
 $lightGrey:rgb(235, 235, 235);
 $black:rgb(0, 0, 0);
 $white:rgb(255, 255, 255);
-.assignment-container-main{
-    .hero{
+
+.assignment-container-main {
+    .hero {
         position: relative;
-        .hero-img-container{
-            height:17rem;
-            overflow:hidden;
-            width:100%;
-            @media (min-width:1000px){
-                height:24rem;
+
+        .hero-img-container {
+            height: 17rem;
+            overflow: hidden;
+            width: 100%;
+
+            @media (min-width:1000px) {
+                height: 24rem;
             }
-            img{
-                width:100%;
-                position:relative;
-                top:-6rem;
+
+            img {
+                width: 100%;
+                position: relative;
+                top: -6rem;
                 // height:3rem
             }
-            @media (max-width:500px){
-                img{
-                    top:0;
-                height:100%;
-                width:unset;
+
+            @media (max-width:500px) {
+                img {
+                    top: 0;
+                    height: 100%;
+                    width: unset;
                 }
             }
-            @media (min-width:501px) and (max-width:600px){
-                img{height:100%;width:100%;top:0}
+
+            @media (min-width:501px) and (max-width:600px) {
+                img {
+                    height: 100%;
+                    width: 100%;
+                    top: 0
+                }
             }
         }
-        .overlay{
-            position:absolute;
-            height:100%;
-            width:100%;
-            background:rgba(42, 45, 62,.8);
-            top:0;
-        }
-        .content-container{
+
+        .overlay {
             position: absolute;
-            top:5rem;
-            @media (max-width:699px){
+            height: 100%;
+            width: 100%;
+            background: rgba(42, 45, 62, .8);
+            top: 0;
+        }
+
+        .content-container {
+            position: absolute;
+            top: 5rem;
+
+            @media (max-width:699px) {
                 justify-content: center;
             }
-            .content{
-                @media (min-width:700px){
+
+            .content {
+                @media (min-width:700px) {
                     align-items: flex-start;
                 }
+
                 color:$white;
             }
-            @media (min-width:1000px){
-                top:9rem;
+
+            @media (min-width:1000px) {
+                top: 9rem;
             }
         }
     }
-    .footer-container-main{
-        margin-top:0;
+
+    .footer-container-main {
+        margin-top: 0;
     }
 }
-.assignment-container-instructor-main{
-    .assignment-create{
-        background:$opaqueBlue;
-        padding:3rem 0;
-        .create{
-            @media (min-width:700px){
+
+.assignment-container-instructor-main {
+    .assignment-create {
+        background: $opaqueBlue;
+        padding: 3rem 0;
+
+        .create {
+            @media (min-width:700px) {
                 flex-direction: row;
                 justify-content: space-between;
             }
-            button{
-                padding:.8rem 4rem;
+
+            button {
+                padding: .8rem 4rem;
             }
         }
     }
-    .evaluation-container-main{
-        background:$lightGrey;
-        @media (min-width:700px){
+
+    .evaluation-container-main {
+        background: $lightGrey;
+
+        @media (min-width:700px) {
             text-align: left;
+        }
+    }
+}
+
+.assignment-container-student-main {
+    text-align: left;
+    background: $lightGrey;
+
+    .assignments {
+        .assignment {
+            @media (min-width:1000px) {
+                display: grid;
+                grid-template-columns: 1.1fr 1fr;
+                grid-column-gap: 2.2rem;
+            }
+
+            @media (min-width:1300px) {
+                grid-template-columns: 1.3fr 1fr;
+            }
+
+            background: $white;
+            padding: 1rem;
+            border-radius: .3rem;
+
+            .content{
+                ul {
+                    list-style-type: disc;
+                    position: relative;
+                    left: 1.2rem;
+    
+                    li {
+                        line-height: 1.4rem;
+                    }
+                }
+    
+                h2 {
+                    color: $black;
+                }
+    
+                .button-group {
+                    @media (min-width:551px) {
+                        flex-direction: row;
+    
+                        .img-container {
+                            margin-right: .5rem;
+                        }
+    
+                        .upload-img {
+                            margin-left: .5rem;
+                        }
+                    }
+    
+                    @media (min-width:800px) {
+                        justify-content: flex-start;
+                    }
+    
+                    .img-container,
+                    .upload-img {
+                        width: calc(50% - 1rem);
+    
+                        @media (max-width:550px) {
+                            width: 100%;
+                        }
+    
+                        background: $darkBlue;
+                        text-align: center;
+                        border-radius:.4rem;
+    
+                        @media (min-width:1000px) {
+                            border-radius: .7rem;
+                        }
+                         
+                        @media (min-width:700px){
+                            ax-width:25rem;
+                        }
+    
+                        &:hover {
+                            box-shadow: 0 0 .2rem $darkGrey;
+                        }
+    
+                        border: none;
+                        color: $white;
+                        font-weight: 600;
+    
+                        a {
+                            color: $white;
+                            font-weight: 600;
+                        }
+                    }
+    
+                    .upload-img {
+                        position: relative;
+                        background: $blue;
+    
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            top: 0;
+                            left: 0;
+                        }
+                    }
+                }
+                .score{
+                    display:none;
+                    span{
+                        position:relative;
+                        top:.2rem;
+                        background: $blue;
+                        color:$white;
+                        font-weight: 600;
+                        border-radius: .4rem;;
+                    }
+                }
+            }
+            .uploaded-img-container{
+                // width:100%;
+                height:100%;
+                overflow: hidden;
+                border-radius: .3rem;
+                position: relative;
+                background: url("../components/images/not-yet-uploaded.jpg");
+                min-height:10rem;
+                background-position: 50% 30%;
+                .img-container{
+                    height:100%;
+                    img{
+                        max-width:100%;
+                        border-radius:.3rem;
+                        max-height:100%;
+                    }
+                }
+                @media (max-width:999px){
+                    margin-top:1.2rem;
+                }
+                .overlay{
+                    background:linear-gradient(to bottom, rgba(42, 45, 62, .5),rgba(42, 45, 62, .9));
+                    position: absolute;
+                    top:0;
+                    width:100%;
+                    height:100%;
+                    color:$white;
+                }
+            }
+        }
+        .assignment-uploaded{
+            .content{
+                .score{
+                    display:flex;
+                }
+            }
+            .uploaded-img-container{
+                background: $white;
+                .overlay{
+                    display:none;
+                }
+            }
         }
     }
 }
