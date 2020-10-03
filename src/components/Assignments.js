@@ -1,4 +1,4 @@
-import React, { useContext, useEffect,useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../state/Store";
 import { Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -6,11 +6,8 @@ import Footer from "./Footer";
 import AssignmentViewInstructor from "./AssignmentViewInstructor";
 import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
-import AssignmentViewStudent from "./AssignmentViewStudent";
-import CreateAssignmentForm from "./CreateAssignmentForm";
 function Assignments(props) {
   const auth = useContext(AuthContext);
-  const [showCreateForm,setshowCreateForm] = useState(false);
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (
@@ -36,7 +33,6 @@ function Assignments(props) {
           <Footer />
         </div>
       )}
-      <CreateAssignmentForm setshowCreateForm={setshowCreateForm} />
     </React.Fragment>
   );
 }
