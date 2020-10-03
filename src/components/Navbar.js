@@ -8,7 +8,8 @@ function Navbar(props) {
     const button = event.currentTarget;
     const id = button.getAttribute("data-target");
     const hidden = document.querySelector(`#${id}`).getAttribute("aria-hidden");
-    document.querySelector('#nav-hidden').classList.toggle('sm-hidden md-hidden');
+    document.querySelector('#nav-hidden').classList.toggle('sm-hidden');
+    document.querySelector('#nav-hidden').classList.toggle('md-hidden');
     hidden === "true" ? document.querySelector(`#${id}`).setAttribute("aria-hidden", false) : document.querySelector(`#${id}`).setAttribute("aria-hidden", true);
     button.querySelector("i").classList.toggle("fa-times");
   }
