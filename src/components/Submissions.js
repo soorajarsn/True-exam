@@ -23,12 +23,12 @@ function SubmissionCard(props) {
           <h3 className="sm-smaller md-smaller lg-smaller no-margin">Score:</h3>
           <span className="md-margin-left sm-padding sm-padding-left sm-padding-right">{props.score}</span>
         </div>
-        <div className="uploaded-img-container flex">
+      </div>
+      <div className="uploaded-img-container flex">
           <div className="img-container flex"><img src={props.image} alt="assignment-img" />
-            <a className="download-edited-img" href={props.image} download></a>
+            <a className="download-edited-img flex" href={props.image} download><i class="fas fa-download"></i></a>
           </div>
         </div>
-      </div>
     </div>
   );
 }
