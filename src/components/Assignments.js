@@ -7,6 +7,7 @@ import AssignmentViewInstructor from "./AssignmentViewInstructor";
 import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
 import AssignmentViewStudent from "./AssignmentViewStudent";
+import CreateAssignmentForm from "./CreateAssignmentForm";
 function Assignments(props) {
   const auth = useContext(AuthContext);
   return (
@@ -34,6 +35,7 @@ function Assignments(props) {
           <Footer />
         </div>
       )}
+      <CreateAssignmentForm />
     </React.Fragment>
   );
 }
