@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/createAssignment.scss";
 const useInput = input => {
-//   const [value, setValue] = useState("");
+  //   const [value, setValue] = useState("");
   const inputElement = (
     <div className={"input-container lg-margin" + (input.containerClassName ? input.containerClassName : "")}>
       <input
@@ -26,26 +26,27 @@ function CreateAssignmentForm(props) {
   const [inputCount, setInputCount] = useState(5);
   let inputs = createInputs(inputCount);
   const increaseInputCount = () => {
-      setInputCount(prev => prev+1);
-  }
-  useEffect(()=>{
+    setInputCount(prev => prev + 1);
+  };
+  useEffect(() => {
     const clipBodyHeight = () => {
-        const body = document.querySelector('body');
-        body.style.height = "200vh";
-        body.style.overflow = "hidden";
-    }
-    const unClipBodyHeight = ()=> {
-        const body = document.querySelector('body');
-        body.style.height = "unset";
-        body.style.overflow = "unset";
-    }
+      const body = document.querySelector("body");
+      body.style.height = "200vh";
+      body.style.overflow = "hidden";
+    };
+    const unClipBodyHeight = () => {
+      const body = document.querySelector("body");
+      body.style.height = "unset";
+      body.style.overflow = "unset";
+    };
     clipBodyHeight();
     return unClipBodyHeight;
-  })
+  });
   return (
     <div className="assignment-form-container-main flex">
       <div className="container form-container flex">
         <form className="create-assignment-form">
+          {useInput({ type: "text", placeholder: "Assignment Title", name: "name" })}
           {inputs.map((Input, index) => (
             <div key={index}>{Input}</div>
           ))}
@@ -61,12 +62,16 @@ function CreateAssignmentForm(props) {
             <input type="file" accept="image/*" />
           </div>
           <div className="button-group flex lg-margin-top justify-space-between">
-              <div className='button-container'>
-                  <button type="button" className="button-secondary full-width" onClick={()=>props.setshowCreateForm(false)}>Cancel</button>
-              </div>
-              <div className="button-container">
-                  <button className="button-primary full-width" type="submit">Create</button>
-              </div>
+            <div className="button-container">
+              <button type="button" className="button-secondary full-width" onClick={() => props.setshowCreateForm(false)}>
+                Cancel
+              </button>
+            </div>
+            <div className="button-container">
+              <button className="button-primary full-width" type="submit">
+                Create
+              </button>
+            </div>
           </div>
         </form>
       </div>
