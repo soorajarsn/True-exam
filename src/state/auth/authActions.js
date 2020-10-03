@@ -20,7 +20,7 @@ export const logOut = () => ({type:LOGOUT_SUCCESS});
 
 export const loginUser = (dispatch,body) => {
         dispatch(loginRequest());
-        dispatch(loginSuccess({token:'sfk23492jsdlfwr',isInstructor:!!localStorage.getItem('isInstructor')}));
+        dispatch(loginSuccess({token:'sfk23492jsdlfwr',isInstructor:localStorage.getItem('isInstructor')}));
 }
 
 export const signupUser = (dispatch, body) => {

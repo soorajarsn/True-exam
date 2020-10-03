@@ -4,10 +4,12 @@ import { Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import AssignmentViewInstructor from "./AssignmentViewInstructor";
+import AssignmentViewStudent from "./AssignmentViewStudent";
 import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
 function Assignments(props) {
   const auth = useContext(AuthContext);
+  console.log(auth);
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (
@@ -18,7 +20,6 @@ function Assignments(props) {
           <div className="hero full-width">
             <div className="hero-img-container">
               <img className=" sm-visible md-visible" src={img1} alt="" />
-              {/* <img className="hidden sm-visible" src={img2} alt="" /> */}
             </div>
             <div className="overlay"></div>
             <div className="content-container container full-width flex">
@@ -28,8 +29,7 @@ function Assignments(props) {
               </div>
             </div>
           </div>
-          <AssignmentViewInstructor />
-          {/* <AssignmentViewStudent /> */}
+          {auth.state.isInstructor ? <AssignmentViewInstructor /> : <AssignmentViewStudent />}
           <Footer />
         </div>
       )}
