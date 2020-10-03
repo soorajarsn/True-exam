@@ -1,18 +1,19 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React,{useState} from "react";
 import img2 from "./images/img1.jpg";
 import img1 from "./images/1.jpeg";
 import user2 from "./images/user2.jpg";
 import user9 from "./images/Index.jpg";
+import CreateAssignmentForm from "./CreateAssignmentForm";
 const img = [img1, img2, user2, user9];
 function AssignmentViewInstructor() {
+  const [showCreateForm,setshowCreateForm] = useState(false);
   return (
     <div className="assignment-container-instructor-main full-width flex flex-column">
       <div className="assignment-create full-width flex">
         <div className="create flex flex-column container full-width limit-width">
           <h2 className="">Create Assignment</h2>
           <div className="button-container lg-margin">
-            <button className="button-secondary">Create</button>
+            <button className="button-secondary" onClick={()=>setshowCreateForm(true)}>Create</button>
           </div>
         </div>
       </div>
@@ -53,6 +54,7 @@ function AssignmentViewInstructor() {
           </div>
         </div>
       </div>
+      {showCreateForm && <CreateAssignmentForm setshowCreateForm={setshowCreateForm} />}
     </div>
   );
 }

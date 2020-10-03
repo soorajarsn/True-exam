@@ -35,7 +35,7 @@ $white:rgb(255, 255, 255);
         }
     }
     .create-assignment-form{
-        width:calc(100% - 2rem);
+        width:calc(100% - 3rem);
         position: absolute;
         top:0;
         max-width:40rem;
@@ -56,12 +56,28 @@ $white:rgb(255, 255, 255);
         }
         .upload-file-container{
             position: relative;
+            .file-upload-button{
+                width:100%;
+            }
             input{
                 width: 100%;
                 position: absolute;
                 opacity: 0;
                 height:100%;
                 cursor: pointer;
+            }
+        }
+        .button-group{
+            .button-container{
+                width:calc(50% - .5rem);
+                &:first-child{
+                    button{
+                        background: red;
+                    }
+                }
+                button{
+                    padding:.7rem 0;
+                }
             }
         }
     }
