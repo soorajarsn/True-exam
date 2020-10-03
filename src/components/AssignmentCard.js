@@ -30,11 +30,11 @@ function AssignmentCard(props) {
           ))}
         </ul>
         <div className="flex flex-column button-group">
-          <button type="button" className="img-container lg-padding lg-margin-top ">
+          <button type="button" className="img-container lg-margin-top ">
             {props.instructorView ? (
-              <Link to={"/submissions/"+props.assignmentId}>Go to Submissions</Link>
+              <Link className="lg-padding" to={"/submissions/"+props.assignmentId}>Go to Submissions</Link>
             ) : (
-              <a href={props.image} download>
+              <a className="lg-padding" href={props.image} download>
                 Download Image Here
               </a>
             )}
