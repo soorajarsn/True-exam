@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/createAssignment.scss";
+import Info from "./Info";
 const useInput = input => {
   //   const [value, setValue] = useState("");
   const inputElement = (
@@ -25,6 +26,7 @@ const createInputs = n => {
 function CreateAssignmentForm(props) {
   const [inputCount, setInputCount] = useState(5);
   const fileInput = useRef(null);
+  const [error, setError] = useState("");
   let inputs = createInputs(inputCount);
   const increaseInputCount = () => {
     setInputCount(prev => prev + 1);
@@ -43,11 +45,57 @@ function CreateAssignmentForm(props) {
     clipBodyHeight();
     return unClipBodyHeight;
   });
+  const getBase64 = file => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+      reader.readAsDataURL(file);
+    });
+  };
+  const showError = err => {
+    setError(err);
+    setTimeout(() => {
+      setError("");
+    }, 5000);
+  };
+  const handleSubmit = event => {
+    event.preventDefault();
+    const fileList = fileInput.current.files;
+    const file = fileList[0];
+    if (!file) {
+      showError("Please Select an Image File");
+    } else {
+      getBase64(file)
+        .then(base64 => {
+          let instructions = [];
+          let title = document.querySelector("input[name=title]").value;
+          if (!title) showError("Assignment title Required");
+          else {
+            document.querySelectorAll("input[type=text]").forEach(inpt => {
+              if (inpt.getAttribute("name") !== "name") {
+                let val = inpt.value;
+                if (val) instructions.push(val);
+              }
+            });
+            let assignmentId = parseInt(Math.random() * 123128238);
+            let savedAssignments = localStorage.getItem("assignments");
+            if (!savedAssignments) savedAssignments = [];
+            else savedAssignments = JSON.parse(savedAssignments);
+            savedAssignments.push({ assignmentId, title, instructions, image: base64 }); //push new assignment
+            localStorage.setItem("assignments", JSON.stringify(savedAssignments)); //store new assignments -->> should not store more than one
+          }
+        })
+        .catch(err => {
+          showError("Something went wrong, Can't upload file");
+        });
+    }
+  };
   return (
     <div className="assignment-form-container-main flex">
       <div className="container form-container flex">
-        <form className="create-assignment-form">
-          {useInput({ type: "text", placeholder: "Assignment Title", name: "name" })}
+        <form className="create-assignment-form" onSubmit={handleSubmit}>
+          {useInput({ type: "text", placeholder: "Assignment Title", name: "title" })}
           {inputs.map((Input, index) => (
             <div key={index}>{Input}</div>
           ))}
@@ -76,6 +124,7 @@ function CreateAssignmentForm(props) {
           </div>
         </form>
       </div>
+      {error && <Info className="error" header="Error" icon="fa-exclamation" info={error} />}
     </div>
   );
 }
