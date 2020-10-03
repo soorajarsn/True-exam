@@ -17,9 +17,9 @@ const templateAssignments = [
     instructions: templateInstructions,
     submissions: [
       { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK832212", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK812322", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK843222", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
     ],
   },
   {
@@ -29,9 +29,9 @@ const templateAssignments = [
     instructions: templateInstructions,
     submissions: [
       { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK832212", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK812322", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK843222", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
     ],
   },
   {
@@ -41,9 +41,9 @@ const templateAssignments = [
     instructions: templateInstructions,
     submissions: [
       { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK832212", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK812322", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK843222", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
     ],
   },
   {
@@ -53,9 +53,9 @@ const templateAssignments = [
     instructions: templateInstructions,
     submissions: [
       { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
-      { userId: "UTK812932", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK832212", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK812322", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
+      { userId: "UTK843222", userName: "Sooraj Shukla", score: "Not yet Scored", image: img1 },
     ],
   },
 ];
