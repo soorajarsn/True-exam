@@ -84,6 +84,7 @@ function CreateAssignmentForm(props) {
             else savedAssignments = JSON.parse(savedAssignments);
             savedAssignments.unshift({ assignmentId, title, instructions, image: base64 }); //push new assignment
             localStorage.setItem("assignments", JSON.stringify(savedAssignments)); //store new assignments -->> should not store more than one
+            props.setshowCreateForm(false);
           }
         })
         .catch(err => {
