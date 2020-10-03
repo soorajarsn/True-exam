@@ -12,6 +12,7 @@ function AssignmentViewInstructor() {
       const l = getLocalAssignments();
       if (l) setLocalAssignments(l);
       setAdded(false);
+      setInitialized(true);
     }
   }, [added]);
   return (
