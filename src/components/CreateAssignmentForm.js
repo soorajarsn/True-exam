@@ -29,18 +29,18 @@ function CreateAssignmentForm(props) {
       setInputCount(prev => prev+1);
   }
   useEffect(()=>{
-    const clipHeight = () => {
+    const clipBodyHeight = () => {
         const body = document.querySelector('body');
         body.style.height = "200vh";
         body.style.overflow = "hidden";
     }
-    const unClipHeight = ()=> {
+    const unClipBodyHeight = ()=> {
         const body = document.querySelector('body');
         body.style.height = "unset";
         body.style.overflow = "unset";
     }
-    clipHeight();
-    return unClipHeight;
+    clipBodyHeight();
+    return unClipBodyHeight;
   })
   return (
     <div className="assignment-form-container-main flex">
