@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import AssignmentViewInstructor from "./AssignmentViewInstructor";
 import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
+import AssignmentViewStudent from "./AssignmentViewStudent";
 function Assignments(props) {
   const auth = useContext(AuthContext);
   return (
@@ -28,7 +29,8 @@ function Assignments(props) {
               </div>
             </div>
           </div>
-          <AssignmentViewInstructor />
+          {/* <AssignmentViewInstructor /> */}
+          <AssignmentViewStudent />
           <Footer />
         </div>
       )}
