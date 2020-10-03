@@ -29,7 +29,7 @@ function Assignments(props) {
               </div>
             </div>
           </div>
-          {auth.state.isInstructor !== 'true' ? <AssignmentViewInstructor /> : <AssignmentViewStudent />}
+          {auth.state.isInstructor == 'true' ? <AssignmentViewInstructor /> : <AssignmentViewStudent />}
           <Footer />
         </div>
       )}
