@@ -6,6 +6,7 @@ import { LoginWithEmail } from "./Login";
 import Signup from "./Signup";
 import Store from "../state/Store";
 import Assignments from "./Assignments";
+import Submissions from "./Submissions";
 function App() {
   return (
     <React.Fragment>
@@ -14,6 +15,7 @@ function App() {
         <Route exact={true} path="/login/:method?" render={props => <LoginWithEmail {...props} />} />
         <Route exact={true} path="/signup" render={props => <Signup {...props} />} />
         <Route exact={true} path="/assignments" render={props => <Assignments {...props} />} />
+        <Route exact={true} path="/submissions/:assignmentId" render={props => <Submissions {...props} />} />
       </Router>
     </React.Fragment>
   );
