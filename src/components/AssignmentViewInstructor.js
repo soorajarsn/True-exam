@@ -1,52 +1,12 @@
 import React, { useState, useEffect } from "react";
-import img2 from "./images/img1.jpg";
-import img1 from "./images/1.jpeg";
-import user2 from "./images/user2.jpg";
-import indexImg from "./images/Index.jpg";
 import CreateAssignmentForm from "./CreateAssignmentForm";
 import AssignmentCard from "./AssignmentCard";
-const templateInstructions = [
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
-];
-export const templateAssignments = [
-  {
-    assignmentId: "assignment1",
-    title: "Assignment Lorem Ipsum",
-    image: img1,
-    instructions: templateInstructions,
-  },
-  {
-    assignmentId: "assignment2",
-    title: "Ipsum Dolor sit",
-    image: img2,
-    instructions: templateInstructions,
-  },
-  {
-    assignmentId: "assignment3",
-    title: "Tempor Dolore Magna",
-    image: user2,
-    instructions: templateInstructions,
-  },
-  {
-    assignmentId: "assignment4",
-    title: "Consectetur Adipisicing",
-    image: indexImg,
-    instructions: templateInstructions,
-  },
-];
-export const getLocalAssignments = () => {
-  const assignments = localStorage.getItem("assignments");
-  return JSON.parse(assignments);
-};
+import templateAssignments,{getLocalAssignments} from './templateAssignments';
 function AssignmentViewInstructor() {
   const [showCreateForm, setshowCreateForm] = useState(false);
   const [localAssignments, setLocalAssignments] = useState([]);
   const [added, setAdded] = useState(false);
-  const [initialized,setInitialized] = useState(false);
+  const [initialized, setInitialized] = useState(false);
   useEffect(() => {
     if (!initialized || added) {
       const l = getLocalAssignments();
