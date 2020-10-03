@@ -1,0 +1,77 @@
+$darkBlue:rgb(42, 45, 62);
+$blue:rgb(1, 115, 178);
+$lightBlue:rgb(122, 176, 212);
+$opaqueBlue:rgba(122, 176, 212, .8);
+$darkGrey:rgb(114, 114, 114);
+$grey:rgb(172, 172, 172);
+$lightGrey:rgb(235, 235, 235);
+$black:rgb(0, 0, 0);
+$white:rgb(255, 255, 255);
+
+.assignment-form-container-main{
+    height:100%;
+    min-height:100vh;
+    @media (max-width:699px){
+        min-height: 110vh;
+    }
+    background: rgba(0,0,0,.9);
+    width:100%;
+    position:fixed;
+    overflow-x: hidden;
+    overflow-y: visible;
+    z-index: 1;
+    top:0;
+    @media (max-width:699px){
+        align-items: flex-start;
+    }
+    .form-container{
+        min-height: 70vh;
+        position: relative;
+        height:70vh;
+        overflow-y:scroll;
+        overflow-x: hidden;
+        @media (max-width:699px){
+            margin-top:2.5rem;
+        }
+    }
+    .create-assignment-form{
+        width:calc(100% - 2rem);
+        position: absolute;
+        top:0;
+        max-width:40rem;
+        padding:2rem 1rem;
+        background: $white;
+        border-radius: .3rem;
+        .input-container{
+            border-radius: .2rem;
+        }
+        .add-more-container,.upload-file-container{
+            .add-more,.file-upload-button{
+                background: $blue;
+                border-radius: 1rem;
+                cursor: pointer;
+                color:$white;
+                border: none;
+            }
+        }
+        .upload-file-container{
+            position: relative;
+            input{
+                width: 100%;
+                position: absolute;
+                opacity: 0;
+                height:100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+// .form-container::-webkit-scrollbar-track{
+//     // display: none;
+// }
+// .form-container::-webkit-scrollbar-thumb{
+//     // display:none;
+// }
+.form-container::-webkit-scrollbar{
+    display:none;
+}
