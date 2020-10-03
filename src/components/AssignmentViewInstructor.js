@@ -3,7 +3,7 @@ import React from "react";
 import img2 from "./images/img1.jpg";
 import img1 from "./images/1.jpeg";
 import user2 from "./images/user2.jpg";
-import user9 from "./images/index.jpg";
+import user9 from "./images/Index.jpg";
 const img = [img1, img2, user2, user9];
 function AssignmentViewInstructor() {
   return (
@@ -18,9 +18,8 @@ function AssignmentViewInstructor() {
       </div>
       <div className="evaluation-container-main full-width flex">
         <div className="container flex flex-column">
-          <div className="evaluation-container lg-padding limit-width full-width assignments">
-            <h2>Evaluate</h2>
-            <p className="sm-margin">No Submission this Week</p>
+          <div className="evaluation-container sm-padding limit-width full-width assignments">
+            <h2 className="lg-margin">Evaluate</h2>
             {img.map((image, index) => (
               <div key={index} id={"assignment" + index} className="assignment lg-margin">
                 <div className="content">
@@ -34,11 +33,9 @@ function AssignmentViewInstructor() {
                     <li className="md-margin">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.</li>
                   </ul>
                   <div className="flex flex-column button-group">
-                    {/* <button type="button" className="img-container lg-padding lg-margin-top ">
-                      <a href={image} download>
-                        Download Image Here
-                      </a>
-                    </button> */}
+                    <button type="button" className="img-container lg-padding lg-margin-top ">
+                      Go to Submissions
+                    </button>
                   </div>
                   {/* <div className="score lg-margin-top flex justify-start">
                     <h3 className="sm-smaller md-smaller lg-smaller no-margin">Score:</h3>
