@@ -18,6 +18,7 @@ body {
     text-align: center;
     width: 100%;
     font-family: "Exo 2", sans-serif;
+    overflow-x: hidden;
 
     @media (min-width:1000px) {
         text-align: left;
@@ -252,12 +253,15 @@ ul {
     width: 100%;
     overflow: hidden;
     border: 2px solid $lightGrey;
-    input,select{
-        border:0;
-        width:100%;
-        color:$darkGrey;
-        padding:.5rem 1rem;
+
+    input,
+    select {
+        border: 0;
+        width: 100%;
+        color: $darkGrey;
+        padding: .5rem 1rem;
         background: transparent;
+
         @media (min-width:700px) {
             font-size: 1.05rem;
         }
@@ -554,26 +558,33 @@ a {
                             width: 50%;
                         }
                     }
-                    .button-group{
-                        .button-container{
-                            button{
-                                padding:.7rem 2.2rem;
-                                font-size:1.2rem;
+
+                    .button-group {
+                        .button-container {
+                            button {
+                                padding: .7rem 2.2rem;
+                                font-size: 1.2rem;
                             }
                         }
                     }
                 }
-                .profile{
-                    .profile-img{
-                        width:3rem;
-                        height:3rem;
+
+                .profile {
+                    .profile-img {
+                        width: 3rem;
+                        height: 3rem;
                         border-radius: 100%;
-                        overflow:hidden;
+                        overflow: hidden;
                         cursor: pointer;
-                        img{width:100%;height:100%;}
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
-                    @media (max-width:999px){
-                        display:none;
+
+                    @media (max-width:999px) {
+                        display: none;
                     }
                 }
 
@@ -581,17 +592,23 @@ a {
                     top: 4.7rem;
                     right: 0rem;
                     width: 30%;
-                    position: absolute;
+                    position: fixed;
                     overflow-x: hidden;
                     height: calc(100vh - 5rem);
                     z-index: 1;
+                    transform: translateX(100%);
+                    transition: transform .2s ease-in-out;
+                    background: white;
+
                     @media (max-width:500px) {
                         width: 100%;
                     }
-                    @media (min-width:500px){
-                        top:5.3rem;
-                        height:calc(100vh - 5.6rem);
+
+                    @media (min-width:500px) {
+                        top: 5.3rem;
+                        height: calc(100vh - 5.6rem);
                     }
+
                     @media (min-width:700px) {
                         top: 5.45rem;
                         height: calc(100vh - 5.5rem);
@@ -606,9 +623,6 @@ a {
                     }
 
                     .wrapper {
-                        transform: translateX(100%);
-                        transition: transform .2s ease-in-out;
-                        background: white;
                         height: 100%;
                         display: flex;
                         flex-direction: column;
@@ -616,11 +630,7 @@ a {
                     }
 
                     &[aria-hidden="false"] {
-                        .wrapper {
                             transform: translateX(0);
-                            visibility: visible;
-                            opacity: 1;
-                        }
                     }
 
                     .nav-items-container {
@@ -666,11 +676,13 @@ a {
 }
 
 .footer-container-main {
-    @media (min-width:1000px){
+    @media (min-width:1000px) {
         border-bottom: solid .5rem $blue;
     }
+
     box-shadow: 0 -.01rem .3rem 0 $grey;
     margin-top:2.5rem;
+
     footer {
         // font-family: "Exo 2",sans-serif;
         background: $darkBlue;
@@ -697,9 +709,10 @@ a {
                 width: 10rem;
                 margin: auto;
             }
-            .logo-container{
-                h2{
-                    color:$white;
+
+            .logo-container {
+                h2 {
+                    color: $white;
                 }
             }
 
@@ -776,7 +789,11 @@ a {
 
                 .logo-container {
                     width: 23%;
-                    h2{color:$black;}
+
+                    h2 {
+                        color: $black;
+                    }
+
                     a {
                         .logo {
                             width: 100%;
@@ -787,7 +804,8 @@ a {
             }
 
             .footer-tablet-end {
-                margin-left:.8rem;
+                margin-left: .8rem;
+
                 .footer-end {
                     color: $darkBlue;
                 }
