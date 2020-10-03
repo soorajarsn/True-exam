@@ -1,8 +1,8 @@
 import React from "react";
-import img2 from "./images/img2.jpg";
+import img2 from "./images/img1.jpg";
 import img1 from "./images/1.jpeg";
 import user2 from "./images/user2.jpg";
-import user9 from "./images/user9.jpg";
+import user9 from "./images/index.jpg";
 const img = [img1, img2, user2, user9];
 function AssignmentViewStudent() {
   function handleFileChange(event) {
