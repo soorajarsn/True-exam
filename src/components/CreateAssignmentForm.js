@@ -2,18 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import "../styles/createAssignment.scss";
 import Info from "./Info";
 const useInput = input => {
-  //   const [value, setValue] = useState("");
   const inputElement = (
     <div className={"input-container lg-margin" + (input.containerClassName ? input.containerClassName : "")}>
-      <input
-        type={input.type}
-        name={input.name}
-        placeholder={input.placeholder}
-        className="lg-padding sm-margin"
-        autoComplete="off"
-        // value={value}/
-        // onChange={event => setValue(event.target.value)}
-      />
+      <input type={input.type} name={input.name} placeholder={input.placeholder} className="lg-padding sm-margin" autoComplete="off" />
     </div>
   );
   return inputElement;
@@ -26,11 +17,9 @@ const createInputs = n => {
 function CreateAssignmentForm(props) {
   const [inputCount, setInputCount] = useState(5);
   const fileInput = useRef(null);
+  const [fileName, setFileName] = useState("");
   const [error, setError] = useState("");
   let inputs = createInputs(inputCount);
-  const increaseInputCount = () => {
-    setInputCount(prev => prev + 1);
-  };
   useEffect(() => {
     const clipBodyHeight = () => {
       const body = document.querySelector("body");
@@ -45,6 +34,9 @@ function CreateAssignmentForm(props) {
     clipBodyHeight();
     return unClipBodyHeight;
   });
+  const increaseInputCount = () => {
+    setInputCount(prev => prev + 1);
+  };
   const getBase64 = file => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -58,6 +50,14 @@ function CreateAssignmentForm(props) {
     setTimeout(() => {
       setError("");
     }, 5000);
+  };
+  const handleFileUpload = () => {
+    const fileList = fileInput.current.files;
+    const file = fileList[0];
+    const name = file.name;
+    if(name.length > 12)
+        setFileName(name.substring(0,12)+"...");
+    else  setFileName(name);
   };
   const handleSubmit = event => {
     event.preventDefault();
@@ -105,10 +105,10 @@ function CreateAssignmentForm(props) {
             </button>
           </div>
           <div className="upload-file-container flex full-width justify-start lg-margin-top">
-            <button type="button" className="file-upload-button bold md-padding" type="button">
-              Upload Image File
+            <button type="button" className="file-upload-button bold md-padding flex" type="button">
+              Upload Image File {fileName && <span id="uploaded-file-name" className="file-name">{" ( "+fileName+" )"}</span>}
             </button>
-            <input ref={fileInput} type="file" accept="image/*" />
+            <input ref={fileInput} type="file" accept="image/*" onChange={handleFileUpload} />
           </div>
           <div className="button-group flex lg-margin-top justify-space-between">
             <div className="button-container">
