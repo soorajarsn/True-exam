@@ -40,6 +40,7 @@ function CreateAssignmentForm(props) {
         body.style.overflow = "unset";
     }
     clipHeight();
+    return unClipHeight;
   })
   return (
     <div className="assignment-form-container-main flex">
