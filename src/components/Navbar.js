@@ -5,11 +5,22 @@ import noImg from "./images/no-user-img.png";
 function Navbar(props) {
   const auth = useContext(AuthContext);
   function toggleNav(event) {
+    const clipBodyHeight = () => {
+      const body = document.querySelector("body");
+      body.style.height = "200vh";
+      body.style.overflow = "hidden";
+    };
+    const unClipBodyHeight = () => {
+      const body = document.querySelector("body");
+      body.style.height = "unset";
+      body.style.overflow = "unset";
+    };
     const button = event.currentTarget;
     const id = button.getAttribute("data-target");
     const hidden = document.querySelector(`#${id}`).getAttribute("aria-hidden");
-    document.querySelector('#nav-hidden').classList.toggle('sm-hidden');
-    document.querySelector('#nav-hidden').classList.toggle('md-hidden');
+    document.querySelector("#nav-hidden").classList.toggle("sm-hidden");
+    document.querySelector("#nav-hidden").classList.toggle("md-hidden");
+    hidden === "true" ? clipBodyHeight() : unClipBodyHeight();
     hidden === "true" ? document.querySelector(`#${id}`).setAttribute("aria-hidden", false) : document.querySelector(`#${id}`).setAttribute("aria-hidden", true);
     button.querySelector("i").classList.toggle("fa-times");
   }
