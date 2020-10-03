@@ -29,8 +29,8 @@ function Assignments(props) {
               </div>
             </div>
           </div>
-          {/* <AssignmentViewInstructor /> */}
-          <AssignmentViewStudent />
+          <AssignmentViewInstructor />
+          {/* <AssignmentViewStudent /> */}
           <Footer />
         </div>
       )}
