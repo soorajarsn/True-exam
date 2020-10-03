@@ -8,6 +8,7 @@ function Navbar(props) {
     const button = event.currentTarget;
     const id = button.getAttribute("data-target");
     const hidden = document.querySelector(`#${id}`).getAttribute("aria-hidden");
+    document.querySelector('#nav-hidden').classList.toggle('sm-hidden md-hidden');
     hidden === "true" ? document.querySelector(`#${id}`).setAttribute("aria-hidden", false) : document.querySelector(`#${id}`).setAttribute("aria-hidden", true);
     button.querySelector("i").classList.toggle("fa-times");
   }
@@ -21,7 +22,7 @@ function Navbar(props) {
                 <h3 className="smaller">Company Logo</h3>
               </Link>
             </li>
-            <li id="nav-hidden" className="button-and-nav-links-container" aria-hidden="true">
+            <li id="nav-hidden" className="button-and-nav-links-container sm-hidden md-hidden" aria-hidden="true">
               <div className="wrapper flex justify-space-between ">
                 <div className="nav-items-container">
                   <ul className="nav-items flex larger-font full-width justify-space-between">
