@@ -22,7 +22,7 @@ const createInputs = n => {
   for (var i = 0; i < n; i++) inputArray.push(useInput({ type: "text", name: "instruction" + (i + 1), placeholder: "Instruction" + (i + 1) }));
   return inputArray;
 };
-function CreateAssignmentForm() {
+function CreateAssignmentForm(props) {
   const [inputCount, setInputCount] = useState(5);
   let inputs = createInputs(inputCount);
   const increaseInputCount = () => {
@@ -49,15 +49,23 @@ function CreateAssignmentForm() {
             <div key={index}>{Input}</div>
           ))}
           <div className="add-more-container flex full-width justify-start">
-            <button className="add-more bold md-padding" type="button" onClick={increaseInputCount}>
+            <button type="button" className="add-more bold md-padding" type="button" onClick={increaseInputCount}>
               Add more Instructions
             </button>
           </div>
           <div className="upload-file-container flex full-width justify-start lg-margin-top">
-            <button className="file-upload-button bold md-padding" type="button">
+            <button type="button" className="file-upload-button bold md-padding" type="button">
               Upload Image File
             </button>
             <input type="file" accept="image/*" />
+          </div>
+          <div className="button-group flex lg-margin-top justify-space-between">
+              <div className='button-container'>
+                  <button type="button" className="button-secondary full-width" onClick={()=>props.setShowCreateForm(false)}>Cancel</button>
+              </div>
+              <div className="button-container">
+                  <button className="button-primary full-width" type="submit">Create</button>
+              </div>
           </div>
         </form>
       </div>
