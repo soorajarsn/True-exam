@@ -45,10 +45,15 @@ export const getLocalAssignments = () => {
 function AssignmentViewInstructor() {
   const [showCreateForm, setshowCreateForm] = useState(false);
   const [localAssignments, setLocalAssignments] = useState([]);
+  const [added, setAdded] = useState(false);
+  const [initialized,setInitialized] = useState(false);
   useEffect(() => {
-    const l = getLocalAssignments();
-    if(l) setLocalAssignments(l);
-  }, []);
+    if (!initialized || added) {
+      const l = getLocalAssignments();
+      if (l) setLocalAssignments(l);
+      setAdded(false);
+    }
+  }, [added]);
   return (
     <div className="assignment-container-instructor-main full-width flex flex-column">
       <div className="assignment-create full-width flex">
@@ -74,7 +79,7 @@ function AssignmentViewInstructor() {
           </div>
         </div>
       </div>
-      {showCreateForm && <CreateAssignmentForm setshowCreateForm={setshowCreateForm} />}
+      {showCreateForm && <CreateAssignmentForm setshowCreateForm={setshowCreateForm} setAdded={setAdded} />}
     </div>
   );
 }
