@@ -104,9 +104,14 @@ $white:rgb(255, 255, 255);
             text-align: left;
         }
     }
+    .assignments{
+        .uploaded-img-container{
+            background: $white!important;
+        }
+    }
 }
 
-.assignment-container-student-main {
+.assignment-container-student-main,.assignment-container-instructor-main {
     text-align: left;
     background: $lightGrey;
 
@@ -175,7 +180,7 @@ $white:rgb(255, 255, 255);
                         }
                          
                         @media (min-width:700px){
-                            ax-width:25rem;
+                            max-width:25rem;
                         }
     
                         &:hover {
@@ -228,6 +233,7 @@ $white:rgb(255, 255, 255);
                 background-position: 50% 30%;
                 .img-container{
                     height:100%;
+                    max-height:20rem;
                     img{
                         max-width:100%;
                         border-radius:.3rem;
