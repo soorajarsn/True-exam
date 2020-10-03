@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/createAssignment.scss";
 const useInput = input => {
   //   const [value, setValue] = useState("");
@@ -24,6 +24,7 @@ const createInputs = n => {
 };
 function CreateAssignmentForm(props) {
   const [inputCount, setInputCount] = useState(5);
+  const fileInput = useRef(null);
   let inputs = createInputs(inputCount);
   const increaseInputCount = () => {
     setInputCount(prev => prev + 1);
@@ -59,7 +60,7 @@ function CreateAssignmentForm(props) {
             <button type="button" className="file-upload-button bold md-padding" type="button">
               Upload Image File
             </button>
-            <input type="file" accept="image/*" />
+            <input ref={fileInput} type="file" accept="image/*" />
           </div>
           <div className="button-group flex lg-margin-top justify-space-between">
             <div className="button-container">
