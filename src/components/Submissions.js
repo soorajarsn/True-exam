@@ -27,11 +27,10 @@ function SubmissionCard(props) {
     let asmt = templateAssignments.filter(assignment => assignment.assignmentId == props.assignmentId);
     if (asmt.length == 1) {
       let newTemplateAssignments = templateAssignments.map(assignment => processAssignment(assignment, newScore));
-      console.log("New Assignment ", newTemplateAssignments);
       updateAssignment(dispatchAssignment, { templateAssignments: newTemplateAssignments });
       props.setLoadAssignments(true);
     } else {
-      asmt = getLocalAssignments().map(assignment => processAssignment(assignment,newScore));
+      asmt = getLocalAssignments().map(assignment => processAssignment(assignment, newScore));
       localStorage.setItem("assignments", JSON.stringify(asmt));
       props.setLoadAssignments(true);
     }
@@ -65,7 +64,9 @@ function SubmissionCard(props) {
         <div className="flex justify-start score-container">
           <div className="score lg-margin-top flex justify-start lg-margin-right">
             <h3 className="sm-smaller md-smaller lg-smaller no-margin">Current Score:</h3>
-            <span className={"md-margin-left sm-padding sm-padding-left sm-padding-right md-padding "+((submission.score != "Not yet Scored" && "round") || "")}>{submission.score}</span>
+            <span className={"md-margin-left sm-padding sm-padding-left sm-padding-right md-padding " + ((submission.score != "Not yet Scored" && "round") || "")}>
+              {submission.score}
+            </span>
           </div>
           <div className="lg-margin-left score lg-margin-top flex justify-start">
             <h3 className="sm-smaller md-smaller lg-smaller no-margin">Score this Assignment:</h3>
@@ -113,8 +114,8 @@ function Submissions(props) {
         <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
       ) : (
         <React.Fragment>
-          {!auth.state.isInstructor ? (
-            <div>Access Denied: Instructor Only Access Permissions</div>
+          {!(auth.state.isInstructor == "true") ? (
+            <div className="lg-margin-top">Access Denied: Instructor Only Access Permissions</div>
           ) : (
             <div className="assignment-container-main">
               <Navbar />
@@ -133,12 +134,16 @@ function Submissions(props) {
               <div className="assignment-container-student-main full-width flex flex-column">
                 <div className="assignments full-width limit-width flex">
                   <div className="container flex apply-min-height flex-column">
-                    {(assignment.submissions && assignment.submissions.length > 0) ? assignment.submissions.map(submission => (
-                      <SubmissionCard
-                        key={submission.userId}
-                        {...{ dispatchAssignment, templateAssignments: assignments.templateAssignments, setLoadAssignments, assignment, submission, assignmentId }}
-                      />
-                    )): <h1>No Submissions yet</h1>}
+                    {assignment.submissions && assignment.submissions.length > 0 ? (
+                      assignment.submissions.map(submission => (
+                        <SubmissionCard
+                          key={submission.userId}
+                          {...{ dispatchAssignment, templateAssignments: assignments.templateAssignments, setLoadAssignments, assignment, submission, assignmentId }}
+                        />
+                      ))
+                    ) : (
+                      <h1>No Submissions yet</h1>
+                    )}
                   </div>
                 </div>
               </div>

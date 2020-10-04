@@ -27,7 +27,7 @@ const authReducer = (state = initialState, action) =>{
         case LOGIN_SUCCESS:
         case SIGNUP_SUCCESS:
             localStorage.setItem('token',action.payload.token);
-            localStorage.setItem('isInstructor',action.payload.isInstructor);
+            localStorage.setItem('isInstructor',action.payload.isInstructor || "false");
             console.log('userLoggedIn');
             return {
                 ...state,
