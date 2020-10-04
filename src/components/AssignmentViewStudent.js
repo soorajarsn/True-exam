@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import AssignmentCard from "./AssignmentCard";
 import {getLocalAssignments} from './LocalAssignments';
 import { AssignmentContext } from "../state/Store";
@@ -14,7 +14,7 @@ function AssignmentViewStudent() {
       <div className="assignments full-width limit-width flex">
         <div className="container">
           {localAssignments.map(assignment => (
-            <AssignmentCard key={assignment.assignmentId} {...assignment} />
+            <AssignmentCard key={assignment.assignmentId} {...assignment} localStorage/>
           ))}
           {assignments.templateAssignments.map((assignment, index) => (
             <AssignmentCard key={index} {...assignment} />
