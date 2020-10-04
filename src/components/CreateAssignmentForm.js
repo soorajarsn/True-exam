@@ -14,6 +14,14 @@ const createInputs = n => {
   for (var i = 0; i < n; i++) inputArray.push(useInput({ type: "text", name: "instruction" + (i + 1), placeholder: "Instruction" + (i + 1) }));
   return inputArray;
 };
+export const getBase64 = file => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+    reader.readAsDataURL(file);
+  });
+};
 function CreateAssignmentForm(props) {
   const [inputCount, setInputCount] = useState(5);
   const fileInput = useRef(null);
@@ -36,14 +44,6 @@ function CreateAssignmentForm(props) {
   });
   const increaseInputCount = () => {
     setInputCount(prev => prev + 1);
-  };
-  const getBase64 = file => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-      reader.readAsDataURL(file);
-    });
   };
   const showError = err => {
     setError(err);
@@ -78,7 +78,7 @@ function CreateAssignmentForm(props) {
                 if (val) instructions.push(val);
               }
             });
-            let assignmentId = parseInt(Math.random() * 123128238);
+            let assignmentId = "skfj"+parseInt(Math.random() * 123128238)+"slfj";
             let savedAssignments = localStorage.getItem("assignments");
             if (!savedAssignments) savedAssignments = [];
             else savedAssignments = JSON.parse(savedAssignments);
