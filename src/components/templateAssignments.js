@@ -9,7 +9,7 @@ const templateInstructions = [
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor dolore magna aliqua.",
 ];
-const templateAssignments = [
+let templateAssignments = [
   {
     assignmentId: "assignment1",
     title: "Assignment Lorem Ipsum",
