@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import AssignmentCard from "./AssignmentCard";
-import templateAssignments,{getLocalAssignments} from './templateAssignments';
+import {getLocalAssignments} from './templateAssignments';
+import { AssignmentContext } from "../state/Store";
 function AssignmentViewStudent() {
   const [localAssignments, setLocalAssignments] = useState([]);
+  const {assignments} = useContext(AssignmentContext);
   useEffect(() => {
     const l = getLocalAssignments();
     if(l)setLocalAssignments(l);
@@ -14,7 +16,7 @@ function AssignmentViewStudent() {
           {localAssignments.map(assignment => (
             <AssignmentCard key={assignment.assignmentId} {...assignment} />
           ))}
-          {templateAssignments.map((assignment, index) => (
+          {assignments.templateAssignments.map((assignment, index) => (
             <AssignmentCard key={index} {...assignment} />
           ))}
         </div>
