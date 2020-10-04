@@ -99,10 +99,11 @@ function Submissions(props) {
     };
     if (loadAssignments) {
       console.log(assignments);
-      let asmt = assignments.templateAssignments.filter(assignment => assignment.assignmentId === assignmentId);
+      let asmt = assignments.templateAssignments.filter(assignment => assignment.assignmentId == assignmentId);
       if (asmt.length === 1) intialize(asmt[0]);
       else {
         asmt = getLocalAssignments();
+        asmt = asmt.filter(assignment => assignment.assignmentId == assignmentId);
         if (asmt.length === 1) intialize(asmt[0]);
       }
       setLoadAssignments(false);
@@ -134,7 +135,7 @@ function Submissions(props) {
               <div className="assignment-container-student-main full-width flex flex-column">
                 <div className="assignments full-width limit-width flex">
                   <div className="container flex apply-min-height flex-column">
-                    {assignment.submissions ? assignment.submissions.map(submission => (
+                    {(assignment.submissions && assignment.submissions.length > 0) ? assignment.submissions.map(submission => (
                       <SubmissionCard
                         key={submission.userId}
                         {...{ dispatchAssignment, templateAssignments: assignments.templateAssignments, setLoadAssignments, assignment, submission, assignmentId }}
