@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CreateAssignmentForm from "./CreateAssignmentForm";
 import AssignmentCard from "./AssignmentCard";
-import templateAssignments,{getLocalAssignments} from './templateAssignments';
+import {getLocalAssignments} from './templateAssignments';
+import { AssignmentContext } from "../state/Store";
 function AssignmentViewInstructor() {
   const [showCreateForm, setshowCreateForm] = useState(false);
   const [localAssignments, setLocalAssignments] = useState([]);
   const [added, setAdded] = useState(false);
   const [initialized, setInitialized] = useState(false);
+  const {assignments} = useContext(AssignmentContext);
   useEffect(() => {
     if (!initialized || added) {
       const l = getLocalAssignments();
@@ -34,7 +36,7 @@ function AssignmentViewInstructor() {
             {localAssignments.map(assignment => (
               <AssignmentCard key={assignment.assignmentId} {...assignment} instructorView />
             ))}
-            {templateAssignments.map((assignment, index) => (
+            {assignments.templateAssignments.map((assignment, index) => (
               <AssignmentCard key={index} {...assignment} instructorView />
             ))}
           </div>
