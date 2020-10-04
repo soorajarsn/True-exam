@@ -8,7 +8,7 @@ function Store(props) {
   const [assignments, dispatchAssignment] = useReducer(assignmentReducer, initialAssignments);
   return (
     <AuthContext.Provider value={{ state: auth, dispatch }}>
-      <AssignmentContext.Provider value={{ templateAssignments: assignments, dispatchAssignment }}>{props.children}</AssignmentContext.Provider>
+      <AssignmentContext.Provider value={{ assignments, dispatchAssignment }}>{props.children}</AssignmentContext.Provider>
     </AuthContext.Provider>
   );
 }
