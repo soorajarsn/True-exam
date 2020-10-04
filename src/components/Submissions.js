@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import img1 from "./images/img1.jpg";
-import { getLocalAssignments } from "./templateAssignments";
+import { getLocalAssignments } from "./LocalAssignments";
 import { updateAssignment } from "../state/assignments/assignmentActions";
 
 function Options() {

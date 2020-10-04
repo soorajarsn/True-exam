@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import AssignmentCard from "./AssignmentCard";
-import {getLocalAssignments} from './templateAssignments';
+import {getLocalAssignments} from './LocalAssignments';
 import { AssignmentContext } from "../state/Store";
 function AssignmentViewStudent() {
   const [localAssignments, setLocalAssignments] = useState([]);

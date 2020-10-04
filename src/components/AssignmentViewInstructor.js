@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import CreateAssignmentForm from "./CreateAssignmentForm";
 import AssignmentCard from "./AssignmentCard";
-import {getLocalAssignments} from './templateAssignments';
+import {getLocalAssignments} from './LocalAssignments';
 import { AssignmentContext } from "../state/Store";
 function AssignmentViewInstructor() {
   const [showCreateForm, setshowCreateForm] = useState(false);
