@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Navbar from "./Navbar";
 import { Link, Redirect } from "react-router-dom";
 import Info from "./Info";
@@ -19,6 +19,9 @@ function Signup(props) {
   const [instructor, setInstructor] = useState(false);
   const [error, setError] = useState("");
   const auth = useContext(AuthContext);
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[]);
   const updateValue = (setter, newValue) => {
     setter(newValue);
     if (error) setError("");

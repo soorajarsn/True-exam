@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../state/Store";
 import { Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
@@ -9,6 +9,9 @@ import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
 function Assignments(props) {
   const auth = useContext(AuthContext);
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[])
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (

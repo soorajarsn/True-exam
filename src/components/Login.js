@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link,Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../styles/login.scss";
@@ -11,6 +11,9 @@ export function LoginWithEmail(props) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const auth = useContext(AuthContext);
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[])
   function handleEmailChange(event) {
     setEmail(event.target.value);
     if (error) setError("");

@@ -108,6 +108,9 @@ function Submissions(props) {
       setLoadAssignments(false);
     }
   }, [loadAssignments]);
+  useEffect(()=>{
+    window.scrollTo();
+  },[]);
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (
