@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../state/Store";
 import noImg from "./images/no-user-img.png";
+import { LOGOUT_SUCCESS } from "../state/auth/authConsts";
 function Navbar(props) {
   const auth = useContext(AuthContext);
   function toggleNav(event) {
@@ -54,14 +55,14 @@ function Navbar(props) {
                 </div>
 
                 {auth.state.userLoggedIn ? (
-                  <div className="profile flex">
+                  <button type="button" className="profile flex" onClick={()=>auth.dispatch({type:LOGOUT_SUCCESS})}>
                     <div className="profile-img">
                       <img src={noImg} alt="" />
                     </div>
                     <div className="sm-margin-left">
-                      <span>User</span>
+                      <span>Logout</span>
                     </div>
-                  </div>
+                  </button>
                 ) : (
                   <div className="flex button-group">
                     <div className={"button-container sm-margin-right" + (props.hideLogin ? " hidden" : "")}>
