@@ -575,6 +575,8 @@ a {
                 }
 
                 .profile {
+                    background: none;
+                    border:none;
                     .profile-img {
                         width: 3rem;
                         height: 3rem;
@@ -589,7 +591,9 @@ a {
                     }
 
                     @media (max-width:999px) {
-                        display: none;
+                        position: absolute;
+                        top:11rem;
+                        left:1rem;
                     }
                 }
 
