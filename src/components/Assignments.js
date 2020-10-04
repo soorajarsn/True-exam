@@ -9,6 +9,7 @@ import "../styles/assignment.scss";
 import img1 from "./images/img1.jpg";
 function Assignments(props) {
   const auth = useContext(AuthContext);
+  console.log(auth,auth.state.isInstructor);
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (
@@ -28,7 +29,7 @@ function Assignments(props) {
               </div>
             </div>
           </div>
-          {auth.state.isInstructor == 'true' ? <AssignmentViewInstructor /> : <AssignmentViewStudent />}
+          {(auth.state.isInstructor == 'true' || auth.state.isInstructor == true) ? <AssignmentViewInstructor /> : <AssignmentViewStudent />}
           <Footer />
         </div>
       )}
