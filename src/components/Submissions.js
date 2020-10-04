@@ -1,10 +1,11 @@
 import React, { useContext, useState, useEffect } from "react";
-import { AuthContext } from "../state/Store";
+import { AuthContext, AssignmentContext } from "../state/Store";
 import { Redirect } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import img1 from "./images/img1.jpg";
-import templateAssignments, { getLocalAssignments } from "./templateAssignments";
+import { getLocalAssignments } from "./templateAssignments";
+import { updateAssignment } from "../state/assignments/assignmentActions";
 
 function Options() {
   var options = [];
@@ -13,12 +14,14 @@ function Options() {
 }
 function SubmissionCard(props) {
   const [selectValue, setSelectValue] = useState(1);
+  const {templateAssignments,dispatchAssignment} = props;
   const updateScore = event => {
     const newScore = event.target.value;
     setSelectValue(newScore);
     let asmt = templateAssignments.filter(assignment => assignment.assignmentId == props.assignmentId);
     if (asmt.length == 1) {
-      templateAssignments = templateAssignments.map(assignment => (assignment.assignmentId == props.assignmentId && { ...assignment, score: newScore }) || assignment);
+      let newTemplateAssignments = templateAssignments.map(assignment => (assignment.assignmentId == props.assignmentId && { ...assignment, score: newScore }) || assignment);
+      updateAssignment(dispatchAssignment,newTemplateAssignments);
     } else {
       asmt = getLocalAssignments().map(assignment => (assignment.assignmentId == props.assignmentId && { ...assignment, score: newScore }) || assignment);
       localStorage.setItem("assignments", JSON.stringify(asmt));
@@ -81,13 +84,14 @@ function Submissions(props) {
   const [submissions, setSubmissions] = useState([]);
   const [assignment, setAssignment] = useState({});
   const [loadAssignments, setLoadAssignments] = useState(true);
+  const {assignments,dispatchAssignment} = useContext(AssignmentContext);
   useEffect(() => {
     const intialize = asmt => {
       setAssignment(asmt);
       setSubmissions(asmt.submissions || []);
     };
     if (loadAssignments) {
-      let asmt = templateAssignments.filter(assignment => assignment.assignmentId === assignmentId);
+      let asmt = assignments.templateAssignments.filter(assignment => assignment.assignmentId === assignmentId);
       if (asmt.length === 1) intialize(asmt[0]);
       else {
         asmt = getLocalAssignments();
@@ -123,7 +127,7 @@ function Submissions(props) {
                 <div className="assignments full-width limit-width flex">
                   <div className="container">
                     {submissions.map(submission => (
-                      <SubmissionCard key={submission.userId} setLoadAssignments={setLoadAssignments} {...assignment} {...submission} />
+                      <SubmissionCard key={submission.userId} {...{dispatchAssignment,templateAssignments:assignments.templateAssignments,setLoadAssignments}} {...assignment} {...submission} />
                     ))}
                   </div>
                 </div>
