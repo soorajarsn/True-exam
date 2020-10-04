@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Pricing() {
   return (
@@ -25,7 +26,7 @@ function Pricing() {
                 <div className="md-margin">
                   2999<span className="smaller">/year</span>
                 </div>
-                <a href="" className="color-secondary bold">View Plan Details</a>
+                <Link to="" className="color-secondary bold">View Plan Details</Link>
                 <div className="button-container">
                   <button className="button-secondary lg-margin">Buy Plan</button>
                 </div>
@@ -50,7 +51,7 @@ function Pricing() {
                 <div className="md-margin">
                   3999<span className="smaller">/year</span>
                 </div>
-                <a href="" className="color-secondary bold">View Plan Details</a>
+                <Link to="" className="color-secondary bold">View Plan Details</Link>
                 <div className="button-container">
                   <button className="button-secondary lg-margin">Buy Plan</button>
                 </div>
@@ -75,7 +76,7 @@ function Pricing() {
                 <div className="md-margin">
                   5999<span>/year</span>
                 </div>
-                <a href="" className="color-secondary bold">View Plan Details</a>
+                <Link to="" className="color-secondary bold">View Plan Details</Link>
                 <div className="button-container">
                   <button className="button-secondary lg-margin">Buy Plan</button>
                 </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext, AssignmentContext } from "../state/Store";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import img1 from "./images/img1.jpg";
@@ -79,7 +79,7 @@ function SubmissionCard(props) {
       <div className="uploaded-img-container background-white flex">
         <div className="img-container flex">
           <img src={submission.image} alt="assignment-img" />
-          <a className="download-edited-img flex" href={submission.image} download>
+          <a className="download-edited-img flex" to={submission.image} download>
             <i className="fas fa-download"></i>
           </a>
         </div>
