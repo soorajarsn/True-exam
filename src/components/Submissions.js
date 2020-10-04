@@ -8,8 +8,8 @@ import templateAssignments, { getLocalAssignments } from "./templateAssignments"
 
 function SubmissionCard(props) {
   return (
-    <div id={props.assignmentId} className="assignment lg-margin">
-      <div className="content assignment-uploaded">
+    <div id={props.assignmentId} className="assignment lg-margin assignment-uploaded">
+      <div className="content">
         <h2 className="smaller">{props.title}</h2>
         <h3 className="sm-smaller md-smaller lg-smaller lg-margin-top md-padding-top">Instructions</h3>
         <ul className="lg-margin">
@@ -19,16 +19,40 @@ function SubmissionCard(props) {
             </li>
           ))}
         </ul>
-        <div className="score lg-margin-top flex justify-start">
-          <h3 className="sm-smaller md-smaller lg-smaller no-margin">Score:</h3>
-          <span className="md-margin-left sm-padding sm-padding-left sm-padding-right">{props.score}</span>
+        <div className="flex user-container justify-start">
+          <ul className="flex jusitify-start">
+            <li className="sm-margin-right">
+              <p className="bold">UserId:<span className="sm-margin-left">{props.userId}</span></p>
+            </li>
+            <li className="sm-margin-left">
+              <p className="bold">UserName:<span className="sm-margin-left">{props.userName}</span></p>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div className="uploaded-img-container flex">
-          <div className="img-container flex"><img src={props.image} alt="assignment-img" />
-            <a className="download-edited-img flex" href={props.image} download><i class="fas fa-download"></i></a>
+        <div className="flex justify-start score-container">
+          <div className="score lg-margin-top flex justify-start lg-margin-right">
+            <h3 className="sm-smaller md-smaller lg-smaller no-margin">Current Score:</h3>
+            <span className="md-margin-left sm-padding sm-padding-left sm-padding-right md-padding">{props.score}</span>
+          </div>
+          <div className="lg-margin-left score lg-margin-top flex justify-start">
+            <h3 className="sm-smaller md-smaller lg-smaller no-margin">Score this Assignment:</h3>
+            {/* <span className="md-margin-left sm-padding sm-padding-left sm-padding-right">{props.score}</span> */}
+            <select className="md-margin-left md-padding md-padding-left md-padding-right">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              {/* <option value="Not yet Scored">Not yet scored</option> */}
+            </select>
           </div>
         </div>
+      </div>
+      <div className="uploaded-img-container background-white flex">
+        <div className="img-container flex">
+          <img src={props.image} alt="assignment-img" />
+          <a className="download-edited-img flex" href={props.image} download>
+            <i class="fas fa-download"></i>
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
@@ -75,7 +99,9 @@ function Submissions(props) {
               <div className="assignment-container-student-main full-width flex flex-column">
                 <div className="assignments full-width limit-width flex">
                   <div className="container">
-                      {submissions.map(submission=><SubmissionCard key={submission.userId} {...assignment} {...submission} />)}
+                    {submissions.map(submission => (
+                      <SubmissionCard key={submission.userId} {...assignment} {...submission} />
+                    ))}
                   </div>
                 </div>
               </div>
