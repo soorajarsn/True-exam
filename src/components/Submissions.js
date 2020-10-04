@@ -79,7 +79,7 @@ function SubmissionCard(props) {
       <div className="uploaded-img-container background-white flex">
         <div className="img-container flex">
           <img src={submission.image} alt="assignment-img" />
-          <a className="download-edited-img flex" to={submission.image} download>
+          <a className="download-edited-img flex" href={submission.image} download>
             <i className="fas fa-download"></i>
           </a>
         </div>
