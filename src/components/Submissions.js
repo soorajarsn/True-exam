@@ -114,7 +114,7 @@ function Submissions(props) {
         <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
       ) : (
         <React.Fragment>
-          {!(auth.state.isInstructor == "true" || auth.state.isInstructor == "true") ? (
+          {!(auth.state.isInstructor == "true" || auth.state.isInstructor == true) ? (
             <div className="lg-margin-top">Access Denied: Instructor Only Access Permissions</div>
           ) : (
             <div className="assignment-container-main">
