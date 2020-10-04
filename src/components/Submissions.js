@@ -6,7 +6,25 @@ import Footer from "./Footer";
 import img1 from "./images/img1.jpg";
 import templateAssignments, { getLocalAssignments } from "./templateAssignments";
 
+function Options() {
+  var options = [];
+  for (var i = 1; i < 11; i++) options.push(<option key={i}>{i}</option>);
+  return options;
+}
 function SubmissionCard(props) {
+  const [selectValue, setSelectValue] = useState(1);
+  const updateScore = event => {
+    const newScore = event.target.value;
+    setSelectValue(newScore);
+    let asmt = templateAssignments.filter(assignment => assignment.assignmentId == props.assignmentId);
+    if (asmt.length == 1) {
+      templateAssignments = templateAssignments.map(assignment => (assignment.assignmentId == props.assignmentId && { ...assignment, score: newScore }) || assignment);
+    } else {
+      asmt = getLocalAssignments().map(assignment => (assignment.assignmentId == props.assignmentId && { ...assignment, score: newScore }) || assignment);
+      localStorage.setItem("assignments", JSON.stringify(asmt));
+    }
+    props.setLoadAssignments(true);
+  };
   return (
     <div id={props.assignmentId} className="assignment lg-margin assignment-uploaded">
       <div className="content">
@@ -22,10 +40,14 @@ function SubmissionCard(props) {
         <div className="flex user-container justify-start">
           <ul className="flex jusitify-start">
             <li className="sm-margin-right">
-              <p className="bold">UserId:<span className="sm-margin-left">{props.userId}</span></p>
+              <p className="bold">
+                UserId:<span className="sm-margin-left">{props.userId}</span>
+              </p>
             </li>
             <li className="sm-margin-left">
-              <p className="bold">UserName:<span className="sm-margin-left">{props.userName}</span></p>
+              <p className="bold">
+                UserName:<span className="sm-margin-left">{props.userName}</span>
+              </p>
             </li>
           </ul>
         </div>
@@ -36,11 +58,8 @@ function SubmissionCard(props) {
           </div>
           <div className="lg-margin-left score lg-margin-top flex justify-start">
             <h3 className="sm-smaller md-smaller lg-smaller no-margin">Score this Assignment:</h3>
-            {/* <span className="md-margin-left sm-padding sm-padding-left sm-padding-right">{props.score}</span> */}
-            <select className="md-margin-left md-padding md-padding-left md-padding-right">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              {/* <option value="Not yet Scored">Not yet scored</option> */}
+            <select className="md-margin-left md-padding md-padding-left md-padding-right" value={selectValue} onChange={updateScore}>
+              <Options />
             </select>
           </div>
         </div>
@@ -49,7 +68,7 @@ function SubmissionCard(props) {
         <div className="img-container flex">
           <img src={props.image} alt="assignment-img" />
           <a className="download-edited-img flex" href={props.image} download>
-            <i class="fas fa-download"></i>
+            <i className="fas fa-download"></i>
           </a>
         </div>
       </div>
@@ -61,18 +80,22 @@ function Submissions(props) {
   const { assignmentId } = props.match.params;
   const [submissions, setSubmissions] = useState([]);
   const [assignment, setAssignment] = useState({});
+  const [loadAssignments, setLoadAssignments] = useState(true);
   useEffect(() => {
     const intialize = asmt => {
       setAssignment(asmt);
       setSubmissions(asmt.submissions || []);
     };
-    let asmt = templateAssignments.filter(assignment => assignment.assignmentId === assignmentId);
-    if (asmt.length === 1) intialize(asmt[0]);
-    else {
-      asmt = getLocalAssignments();
+    if (loadAssignments) {
+      let asmt = templateAssignments.filter(assignment => assignment.assignmentId === assignmentId);
       if (asmt.length === 1) intialize(asmt[0]);
+      else {
+        asmt = getLocalAssignments();
+        if (asmt.length === 1) intialize(asmt[0]);
+      }
+      setLoadAssignments(false);
     }
-  }, []);
+  }, [loadAssignments]);
   return (
     <React.Fragment>
       {!auth.state.userLoggedIn ? (
@@ -100,7 +123,7 @@ function Submissions(props) {
                 <div className="assignments full-width limit-width flex">
                   <div className="container">
                     {submissions.map(submission => (
-                      <SubmissionCard key={submission.userId} {...assignment} {...submission} />
+                      <SubmissionCard key={submission.userId} setLoadAssignments={setLoadAssignments} {...assignment} {...submission} />
                     ))}
                   </div>
                 </div>
