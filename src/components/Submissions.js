@@ -31,9 +31,8 @@ function SubmissionCard(props) {
       updateAssignment(dispatchAssignment, { templateAssignments: newTemplateAssignments });
       props.setLoadAssignments(true);
     } else {
-      asmt = getLocalAssignments().map(assignment => (assignment.assignmentId == props.assignmentId && { ...assignment, score: newScore }) || assignment);
+      asmt = getLocalAssignments().map(assignment => processAssignment(assignment,newScore));
       localStorage.setItem("assignments", JSON.stringify(asmt));
-      console.log("SEt");
       props.setLoadAssignments(true);
     }
   };
@@ -98,7 +97,6 @@ function Submissions(props) {
       setAssignment(asmt);
     };
     if (loadAssignments) {
-      console.log(assignments);
       let asmt = assignments.templateAssignments.filter(assignment => assignment.assignmentId == assignmentId);
       if (asmt.length === 1) intialize(asmt[0]);
       else {
