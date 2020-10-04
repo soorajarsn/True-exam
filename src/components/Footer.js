@@ -16,7 +16,7 @@ function Footer() {
               <a href="/#faqs">FAQs</a>
             </div>
             <div>
-              <Link to="">Other Services</Link>
+              <Link to="">Join Us</Link>
             </div>
             <div>
               <Link to="">About</Link>
