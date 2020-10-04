@@ -104,14 +104,16 @@ $white:rgb(255, 255, 255);
             text-align: left;
         }
     }
-    .assignments{
-        .uploaded-img-container{
-            background: $white!important;
+
+    .assignments {
+        .uploaded-img-container {
+            background: $white !important;
         }
     }
 }
 
-.assignment-container-student-main,.assignment-container-instructor-main {
+.assignment-container-student-main,
+.assignment-container-instructor-main {
     text-align: left;
     background: $lightGrey;
 
@@ -131,78 +133,78 @@ $white:rgb(255, 255, 255);
             padding: 1rem;
             border-radius: .3rem;
 
-            .content{
+            .content {
                 ul {
                     list-style-type: disc;
                     position: relative;
                     left: 1.2rem;
-    
+
                     li {
                         line-height: 1.4rem;
                     }
                 }
-    
+
                 h2 {
                     color: $black;
                 }
-    
+
                 .button-group {
                     @media (min-width:551px) {
                         flex-direction: row;
-    
+
                         .img-container {
                             margin-right: .5rem;
                         }
-    
+
                         .upload-img {
                             margin-left: .5rem;
                         }
                     }
-    
+
                     @media (min-width:800px) {
                         justify-content: flex-start;
                     }
-    
+
                     .img-container,
                     .upload-img {
                         width: calc(50% - 1rem);
-    
+
                         @media (max-width:550px) {
                             width: 100%;
                         }
-    
+
                         background: $darkBlue;
                         text-align: center;
                         border-radius:.4rem;
-    
+
                         @media (min-width:1000px) {
                             border-radius: .7rem;
                         }
-                         
-                        @media (min-width:700px){
-                            max-width:25rem;
+
+                        @media (min-width:700px) {
+                            max-width: 25rem;
                         }
-    
+
                         &:hover {
                             box-shadow: 0 0 .2rem $darkGrey;
                         }
-    
+
                         border: none;
                         color: $white;
                         font-weight: 600;
-    
+
                         a {
                             color: $white;
                             font-weight: 600;
-                            width:100%;
+                            width: 100%;
                             display: inline-block;
                         }
                     }
-    
+
                     .upload-img {
                         position: relative;
                         background: $blue;
-    
+
                         input {
                             position: absolute;
                             opacity: 0;
@@ -212,117 +214,165 @@ $white:rgb(255, 255, 255);
                         }
                     }
                 }
-                .user-container{//submission page
-                    ul{
+
+                .user-container {
+
+                    //submission page
+                    ul {
                         list-style-type: none;
                         position: static;
-                        @media (max-width:699px){
+
+                        @media (max-width:699px) {
                             flex-direction: column;
                             align-items: flex-start;
-                            li{
-                                margin-left:0;margin-right:0;
+
+                            li {
+                                margin-left: 0;
+                                margin-right: 0;
                             }
                         }
-                        li{
-                            p{
+
+                        li {
+                            p {
                                 font-size: 1.1rem;
                             }
-                            span{
-                                display: inline-block;
-                                font-weight: 400;
-                            }
                         }
                     }
                 }
-                .score-container{//assignment page
-                    @media (max-width:699px){
+
+                .score-container {
+
+                    //assignment page
+                    @media (max-width:699px) {
                         flex-direction: column;
                         align-items: flex-start;
-                        .score{
-                            margin-left:0;
-                            margin-right:0;
+
+                        .score {
+                            margin-left: 0;
+                            margin-right: 0;
                         }
                     }
                 }
-                .score{
-                    display:none;
-                    span{
-                        position:relative;
-                        top:.2rem;
+
+                .score {
+                    display: none;
+
+                    span {
+                        position: relative;
+                        top: .2rem;
                         background: $blue;
-                        color:$white;
+                        color: $white;
                         font-weight: 600;
-                        border-radius: .4rem;;
+                        border-radius: .4rem;
+                        ;
                     }
-                    select{
-                        background:$blue;
-                        position:relative;
-                        top:.2rem;
-                        color:$white;
-                        border-radius:.4rem;
+
+                    .round {
+                        border-radius: 100%;
+                        width: 2rem;
+                        height: 2rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 0;
+                    }
+
+                    select {
+                        background: $blue;
+                        position: relative;
+                        top: .2rem;
+                        color: $white;
+                        border-radius: .4rem;
                         font-weight: 600;
-                        border:none;
+                        border: none;
+                        cursor: pointer;
                     }
                 }
             }
-            .uploaded-img-container{
+
+            .uploaded-img-container {
                 // width:100%;
-                height:100%;
+                height: 100%;
                 overflow: hidden;
                 border-radius: .3rem;
                 position: relative;
                 background: url("../components/images/not-yet-uploaded.jpg");
-                min-height:10rem;
+                min-height: 10rem;
                 background-position: 50% 30%;
-                .img-container{
-                    max-height:20rem;
-                    img{
-                        max-width:100%;
-                        border-radius:.3rem;
-                        max-height:100%;
+
+                .img-container {
+                    max-height: 20rem;
+
+                    img {
+                        max-width: 100%;
+                        border-radius: .3rem;
+                        max-height: 100%;
                     }
+
                     position: relative;
-                    .download-edited-img{//submission page
-                        background:$lightGrey;
-                        width:3rem;height:3rem;
+
+                    .download-edited-img {
+                        //submission page
+                        background: $lightGrey;
+                        width: 3rem;
+                        height: 3rem;
                         position: absolute;
                         border-radius: 100%;
-                        right:.5rem;
-                        bottom:.5rem;
-                        i{
-                            font-size:1.7rem;
-                            color:$darkBlue;
+                        right: .5rem;
+                        bottom: .5rem;
+
+                        i {
+                            font-size: 1.7rem;
+                            color: $darkBlue;
                         }
                     }
                 }
-                @media (max-width:999px){
-                    margin-top:1.2rem;
+
+                @media (max-width:999px) {
+                    margin-top: 1.2rem;
                 }
-                .overlay{
-                    background:linear-gradient(to bottom, rgba(42, 45, 62, .5),rgba(42, 45, 62, .9));
+
+                .overlay {
+                    background: linear-gradient(to bottom, rgba(42, 45, 62, .5), rgba(42, 45, 62, .9));
                     position: absolute;
-                    top:0;
-                    width:100%;
-                    height:100%;
-                    color:$white;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    color: $white;
                 }
             }
         }
-        .assignment-uploaded{
-            .content{
-                .score{
-                    display:flex;
+
+        .assignment-uploaded {
+            .content {
+                .score {
+                    display: flex;
                 }
             }
-            .uploaded-img-container{
+
+            .uploaded-img-container {
                 background: $white;
-                .overlay{
-                    display:none;
+
+                .overlay {
+                    display: none;
                 }
+            }
+        }
+
+        .apply-min-height {
+            min-height: 10rem;
+
+            @media (min-width:700px) {
+                min-height: calc(100vh - 136.38px - 97.34px - 272px - 38.4px);
+            }
+
+            @media (min-width:1000px) {
+                min-height: calc(100vh - 41.7rem);
             }
         }
     }
 }
-.background-white{
-    background: $white!important;
+
+.background-white {
+    background: $white !important;
 }
