@@ -17,16 +17,24 @@ function Pricing() {
                   <hr className="bottom-hr" />
                 </div>
                 <ul className="md-margin">
-                  <li className="sm-margin large-margin">Unlimited Consultation with any speciality</li>
-                  <li className="sm-margin large-margin">20% Off on prescription medicines</li>
-                  <li className="sm-margin large-margin">20% Off on tests & checkups</li>
+                  <li className="sm-margin large-margin">elit, sed do eiusmod tempor dolore</li>
+                  <li className="sm-margin large-margin">elit, sed do eiusmod tempor .</li>
+                  <li className="sm-margin large-margin">2elit, sed do eiusmod tempor aliqua.</li>
+                  <li className="sm-margin large-margin">
+                    <del>sed do eiusmod tempor dolore miqua</del>
+                  </li>
+                  <li className="sm-margin large-margin">
+                    <del>Do eiusmod tempor dolore magna aliqua.</del>
+                  </li>
                 </ul>
               </div>
               <div className="price">
                 <div className="md-margin">
                   2999<span className="smaller">/year</span>
                 </div>
-                <Link to="" className="color-secondary bold">View Plan Details</Link>
+                <Link to="" className="color-secondary bold">
+                  View Plan Details
+                </Link>
                 <div className="button-container">
                   <button className="button-secondary lg-margin">Buy Plan</button>
                 </div>
@@ -41,17 +49,22 @@ function Pricing() {
                   <hr className="bottom-hr" />
                 </div>
                 <ul className="md-margin">
-                  <li className="sm-margin large-margin">Unlimited Consultation with any speciality</li>
-                  <li className="sm-margin large-margin">20% Off on prescription medicines</li>
-                  <li className="sm-margin large-margin">20% Off on tests & checkups</li>
-                  <li className="sm-margin large-margin">10 Free in-Clinic consulations</li>
+                  <li className="sm-margin large-margin">elit, sed do eiusmod tempor dolore</li>
+                  <li className="sm-margin large-margin">elit, sed do eiusmod tempor .</li>
+                  <li className="sm-margin large-margin">2elit, sed do eiusmod tempor aliqua.</li>
+                  <li className="sm-margin large-margin">sed do eiusmod tempor dolore miqua</li>
+                  <li className="sm-margin large-margin">
+                    <del>Do eiusmod tempor dolore magna aliqua.</del>
+                  </li>
                 </ul>
               </div>
               <div className="price">
                 <div className="md-margin">
                   3999<span className="smaller">/year</span>
                 </div>
-                <Link to="" className="color-secondary bold">View Plan Details</Link>
+                <Link to="" className="color-secondary bold">
+                  View Plan Details
+                </Link>
                 <div className="button-container">
                   <button className="button-secondary lg-margin">Buy Plan</button>
                 </div>
@@ -65,18 +78,20 @@ function Pricing() {
                   <hr className="bottom-hr" />
                 </div>
                 <ul className="md-margin">
-                  <li className="sm-margin large-margin">Unlimited Consultation with any speciality</li>
-                  <li className="sm-margin large-margin">20% Off on prescription medicines</li>
-                  <li className="sm-margin large-margin">20% Off on tests & checkups</li>
-                  <li className="sm-margin large-margin">10 Free In-Clinic consultations</li>
-                  <li className="sm-margin large-margin">2 Master health checkups</li>
+                  <li className="sm-margin large-margin">elit, sed do eiusmod tempor dolore</li>
+                  <li className="sm-margin large-margin">elit, sed do eiusmod tempor .</li>
+                  <li className="sm-margin large-margin">2elit, sed do eiusmod tempor aliqua.</li>
+                  <li className="sm-margin large-margin">sed do eiusmod tempor dolore miqua</li>
+                  <li className="sm-margin large-margin">Do eiusmod tempor dolore magna aliqua.</li>
                 </ul>
               </div>
               <div className="price">
                 <div className="md-margin">
                   5999<span>/year</span>
                 </div>
-                <Link to="" className="color-secondary bold">View Plan Details</Link>
+                <Link to="" className="color-secondary bold">
+                  View Plan Details
+                </Link>
                 <div className="button-container">
                   <button className="button-secondary lg-margin">Buy Plan</button>
                 </div>
